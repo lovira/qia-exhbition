@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #43438E;
+    font-family: "Space Grotesk", serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    height: 90vh;
+    position: relative;
+    align-items: center;
+}
+
+.sidebar {
+    width: 15%;
+    padding: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    width: 15%;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+}
+
+.sidebar ul li {
+    margin-bottom: 30px;
+    color: #e8e8e8d3;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #e8e8e8d3;
+    font-size: 16px;
+}
+
+.content {
+    width: 40%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    flex-shrink: 0;
+    margin-left: 5%; /* Add left margin to maintain consistent position */
+}
+
+/* Base h1 styles without animation */
+h1 {
+    font-size: 6em;
+    line-height: 1.2;
+    color: #AB6E7E;
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Animation only for homepage h1 */
+.index-page h1 {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: zoomInFade 3s ease forwards;
+}
+
+@keyframes zoomInFade {
+    from {
+        transform: scale(0.2);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #e8e8e8d3;
+}
+
+/* #animation-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -7%;
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+} */
+#animation-container {
+    position: fixed; /* Change from absolute to fixed */
+    top: 50%;
+    transform: translateY(-50%);
+    right: -7%;
+    width: 50vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    pointer-events: none; /* Ensures it doesn't interfere with interactions */
+    z-index: 1; /* Ensures it stays above other content */
+}
+
+.about-text {
+
+    padding-left: 5%;
+    color: #e8e8e8d3;
+    font-size: 1.1em;
+    line-height: 1.6;
+    height: 100vh;
+    overflow-y: scroll; /* Enables vertical scrolling */
+    display: flex;
+    align-items: flex-start;
+    padding-top: 25vh;
+    -ms-overflow-style: none;  /* Hides scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hides scrollbar in Firefox */
+}
+
+
+
+
