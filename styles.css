@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -101,14 +101,14 @@ h1 {
 #animation-container {
     position: fixed; /* Change from absolute to fixed */
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-60%);
     right: -7%;
-    width: 50vw;
+    width: 60vw;
     height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
-    pointer-events: none; /* Ensures it doesn't interfere with interactions */
+    pointer-events: none; 
     z-index: 1; /* Ensures it stays above other content */
 }
 
@@ -136,6 +136,7 @@ h1 {
     font-size: 1.1em;
     line-height: 1.6;
     width: 100%;
+    color: #e8e8e8d3;
 }
 
 
