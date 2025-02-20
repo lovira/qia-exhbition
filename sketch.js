@@ -4,7 +4,7 @@ let points = [];
 let fading = false;
 
 function setup() {
-    canvas = createCanvas(800, 1000);
+    canvas = createCanvas(1000, 1000);
     canvas.parent('animation-container');
     
     stroke(171, 110, 126);
@@ -17,7 +17,7 @@ function draw() {
     clear();
     
     if (!fading) {
-        // Calculate new point position using Perlin noise
+
         let x = map(noise(xoff), 0, 1, 0, width);
         let y = map(noise(yoff), 0, 1, 0, height);
         
@@ -30,7 +30,7 @@ function draw() {
         xoff += 0.01;
         yoff += 0.01;
         
-        if (points.length >= 250) {
+        if (points.length >= 500) {
             fading = true;
         }
     }
