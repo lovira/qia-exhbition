@@ -113,7 +113,7 @@ h1 {
 }
 
 .about-column {
-    width: 40%;
+    width: 75%;
     margin-left: 5%; /* Increased from 5% to create more space from content column */
     color: #e8e8e8d3;
     display: flex;
@@ -136,4 +136,32 @@ h1 {
     font-size: 1.1em;
     line-height: 1.6;
     width: 100%;
+}
+
+
+/* .title-about h2 {
+    /* font-size: 4em; */
+    /* line-height: 1.2;
+    color: #AB6E7E;
+    transform: scale(1);
+    opacity: 1;
+} */
+
+.about-content {
+    width: 25%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    flex-shrink: 0;
+    margin-left: 5%; 
+}
+
+.about-title {
+    font-size: 3.5em;
+    line-height: 1.2;
+    color: #AB6E7E;
+    transform: scale(1);
+    opacity: 1;
 }
