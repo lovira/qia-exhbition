@@ -15,7 +15,7 @@ body {
     width: 90%;
     height: 90vh;
     position: relative;
-    align-items: center;
+    align-items: flex-start; /* Changed to align-items: flex-start */
 }
 
 .sidebar {
@@ -112,21 +112,28 @@ h1 {
     z-index: 1; /* Ensures it stays above other content */
 }
 
-.about-text {
-
-    padding-left: 5%;
+.about-column {
+    width: 40%;
+    margin-left: 5%; /* Increased from 5% to create more space from content column */
     color: #e8e8e8d3;
-    font-size: 1.1em;
-    line-height: 1.6;
-    height: 100vh;
-    overflow-y: scroll; /* Enables vertical scrolling */
     display: flex;
-    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
     padding-top: 25vh;
-    -ms-overflow-style: none;  /* Hides scrollbar in IE and Edge */
-    scrollbar-width: none;  /* Hides scrollbar in Firefox */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
 }
 
+/* Hide scrollbar for Chrome/Safari/Opera */
+.about-column::-webkit-scrollbar {
+    display: none;
+}
 
-
-
+.about-column p {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    width: 100%;
+}

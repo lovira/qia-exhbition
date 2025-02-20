@@ -30,7 +30,7 @@ function draw() {
         xoff += 0.01;
         yoff += 0.01;
         
-        if (points.length >= 500) {
+        if (points.length >= 250) {
             fading = true;
         }
     }
