@@ -166,3 +166,17 @@ h1 {
     transform: scale(1);
     opacity: 1;
 }
+
+
+.works-column {
+    width: 75%;
+    margin-left: 5%; /* Increased from 5% to create more space from content column */
+    color: #e8e8e8d3;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 25vh;
+    overflow-y: scroll; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+}
