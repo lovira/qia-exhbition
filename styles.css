@@ -168,7 +168,7 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-top: 25vh;
+    /* padding-top: 25vh; */
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
@@ -181,7 +181,7 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-top: 25vh;
+    /* padding-top: 25vh; */
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
