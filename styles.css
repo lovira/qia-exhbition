@@ -149,7 +149,7 @@ h1 {
     opacity: 1;
 }
 
-/* !! HERE TO FIX THE WORKS PAGE */
+/* HERE TO FIX THE WORKS PAGE */
 .works-column {
     width: 75%;
     margin-left: 5%; /* Increased from 5% to create more space from content column */
@@ -168,7 +168,7 @@ h1 {
 
 /*ESSAY PAGE*/
 .essay-content {
-    width: 45%;
+    width: 75%;
     margin-left: 5%; /* Increased from 5% to create more space from content column */
     color: #e8e8e8d3;
     display: flex;
