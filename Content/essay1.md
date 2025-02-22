@@ -10,7 +10,7 @@ Di era Indonesia kontemporer seperti sekarang ini, diskusi mengenai queer dan Mu
 
 Penjelasan di atas memunculkan asumsi bahwa semakin hangatnya diskusi tentang queer dan Muslim merupakan produk dari tumbangnya rezim Orde Baru. Memang, tidak dapat  dimungkiri, konteks politik Indonesia setelah Orde Baru berkontribusi memberikan ruang bagi berkembangnya diskusi mengenai queer dan Muslim, terutama dari sudut pandang yang saling mengakomodasi, sekalipun itu juga disertai dengan berbagai aksi represi. Namun, anggapan itu juga seolah mengisyaratkan bahwa diskusi mengenai queer Muslim merupakan ‘produk baru’ yang hadir berkat konteks politik tertentu, bukan sebagai sebuah keniscayaan yang melintasi zaman. Apalagi, beberapa literatur juga menunjukkan bahwa teologi queer sebagai alat filsafat keagamaan yang coba mendekati teks-teks keagamaan lewat kacamata non-biner juga baru lahir dan berkembang sejak dua dekade terakhir, sebagaimana yang ditunjukkan oleh Amar Alfikar dalam bukunya Queer Menafsir. Tak hanya itu, dalam beberapa linimasa di era Orde Baru, ekspresi queer banyak ‘dirayakan’ di layar kaca sebagai bagian dari pertunjukan panggung hiburan. Meski perlu digarisbawahi bahwa ekspresi queer lebih kerap dijadikan bahan olok-olokan dan tertawaan serta tidak benar-benar berusaha dipahami secara esensial, fakta bahwa queer menjadi diskursus yang menyebar itu nyata adanya. 
 
-Lalu, bagaimana posisi Islam? 
+## Lalu, bagaimana posisi Islam? 
 
 Meskipun relijiusitas Islam turut membentuk dan memengaruhi dinamika kehidupan queer, diskursus mengenai Islam dan queer belum banyak ditelisik sebelum tumbangnya rezim Orde Baru. Dengan kata lain, posisi Islam dalam mewarnai kehidupan queer belum benar-benar didiskusikan secara serius pada masa itu. Sebagaimana yang dijelaskan di muka, diskursus soal queer Muslim menyeruak dipengaruhi oleh konteks ruang ekspresi keagamaan yang semakin terbuka setelah rezim Orde Baru jatuh. 
 
@@ -104,3 +104,6 @@ Sekali lagi, upaya untuk mendamaikan queer dan Muslim yang dianggap saling berte
 
 
 ***Pengungkapan:**  artikel ini ditulis berdasarkan penelitian pada arsip yang dimiliki oleh Queer Archive Indonesia (QIA). Terbatasnya jumlah arsip yang dikumpulkan memungkinkan limitasi analisis dalam artikel ini.  
+
+
+<em> Untuk mendownload article dalam bentuk pdf, klik <ins>disini</ins> </em>

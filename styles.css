@@ -87,17 +87,6 @@ h1 {
     color: #e8e8e8d3;
 }
 
-/* #animation-container {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -7%;
-    width: 50vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-} */
 #animation-container {
     position: fixed; /* Change from absolute to fixed */
     top: 50%;
@@ -160,7 +149,7 @@ h1 {
     opacity: 1;
 }
 
-
+/* !! HERE TO FIX THE WORKS PAGE */
 .works-column {
     width: 75%;
     margin-left: 5%; /* Increased from 5% to create more space from content column */
@@ -168,31 +157,38 @@ h1 {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* padding-top: 25vh; */
+    padding-top: 25vh; 
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
 }
 
+
+
+
+/*ESSAY PAGE*/
 .essay-content {
-    width: 75%;
+    width: 45%;
     margin-left: 5%; /* Increased from 5% to create more space from content column */
     color: #e8e8e8d3;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    /* padding-top: 25vh; */
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
 }
 
-.essay-content h1 { font-size: 2.5rem; 
+.essay-content h1 { font-size: 3.5rem; 
+    color: #e8e8e8d3;
+
 }
 .essay-content h2 { font-size: 1.8rem;
  }
 
-.essay-content p { margin-bottom: 1.5rem; 
+.essay-content p { margin-bottom: 1rem; 
     text-align: justify;
     text-justify: inter-word;
+    line-height: 1.5rem;
 }
+
