@@ -83,7 +83,7 @@ h1 {
 }
 
 .subtitle {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #e8e8e8d3;
 }
 
@@ -103,13 +103,12 @@ h1 {
 
 .about-column {
     margin-right: 5%;
-    width: 75%;
-    margin-left: 5%; /* Increased from 5% to create more space from content column */
+    width: 65%;
     color: #e8e8e8d3;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    padding-top: 15vh;
+
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
@@ -145,7 +144,7 @@ h1 {
     justify-content: center;
     height: 100vh;
     flex-shrink: 0;
-    margin-left: 5%; 
+
 
 }
 
@@ -159,7 +158,7 @@ h1 {
 
 /* HERE TO FIX THE WORKS PAGE */
 .works-column {
-    width: 75%;
+    width: 65%;
     margin-left: 5%; /* Increased from 5% to create more space from content column */
     color: #e8e8e8d3;
     display: flex;
@@ -174,10 +173,9 @@ h1 {
 
 /*ESSAY PAGE*/
 .essay-content {
-    width: 75%;
+    width: 65%;
     margin-right: 5%;
-    margin-left: 5%; /* Increased from 5% to create more space from content column */
-    color: #e8e8e8d3;
+    color: #ffffffa3;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -186,10 +184,13 @@ h1 {
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
 }
 
-.essay-content h1 { font-size: 3.5rem; 
-    color: #e8e8e8d3;
+.essay-content  h1 { 
+    font-size: 3.5rem; 
+    color: #f3d8b7bf;
 
 }
+
+
 .essay-content h2 { font-size: 1.8rem;
  }
 
@@ -199,3 +200,15 @@ h1 {
     text-justify: inter-word;
     line-height: 1.5rem;
 }
+
+
+/* ABOUT COLUMN */
+
+.about-column  h1 { 
+    font-size: 3.5rem; 
+    color: #f3d8b7bf;
+
+}
+
+
+
