@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Comic Panel Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .comic-container {
+      position: relative;
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .comic-panel {
+      display: none;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    
+    .comic-panel.active {
+      display: block;
+    }
+    
+    .panel-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 20px;
+    }
+    
+    .nav-button {
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .nav-button:hover {
+      background-color: #555;
+    }
+    
+    .nav-button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
+    
+    .panel-counter {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="comic-container">
+    <div class="comic-panels">
+      <!-- Comic panels - Replace src attributes with your actual image paths -->
+      <div class="comic-panel active">
+        <img src="/Content/comic-panels/1.png" alt="Comic Panel 1" class="panel-img">
+      </div>
+      <div class="comic-panel">
+        <img src="Content/comic-panels/2.png" alt="Comic Panel 2" class="panel-img">
+      </div>
+      <div class="comic-panel">
+        <img src="Content/comic-panels/3.png" alt="Comic Panel 2" class="panel-img">
+      </div>
+      <div class="comic-panel">
+        <img src="Content/comic-panels/4.png" alt="Comic Panel 2" class="panel-img">
+      </div>
+      <div class="comic-panel">
+        <img src="Content/comic-panels/5.png" alt="Comic Panel 2" class="panel-img">
+      </div>
+      <div class="comic-panel">
+        <img src="Content/comic-panels/6.png" alt="Comic Panel 2" class="panel-img">
+      </div>
+    </div>
+    
+    <div class="panel-counter" id="panelCounter">Panel 1 of 2</div>
+    
+    <div class="nav-buttons">
+      <button class="nav-button" id="prevButton" disabled>Previous</button>
+      <button class="nav-button" id="nextButton">Next</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const panels = document.querySelectorAll('.comic-panel');
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      const panelCounter = document.getElementById('panelCounter');
+      let currentPanel = 0;
+      
+      function updateDisplay() {
+        // Hide all panels
+        panels.forEach(panel => panel.classList.remove('active'));
+        
+        // Show current panel
+        panels[currentPanel].classList.add('active');
+        
+        // Update counter
+        panelCounter.textContent = `Panel ${currentPanel + 1} of ${panels.length}`;
+        
+        // Update button states
+        prevButton.disabled = currentPanel === 0;
+        nextButton.disabled = currentPanel === panels.length - 1;
+      }
+      
+      // Next button click
+      nextButton.addEventListener('click', function() {
+        if (currentPanel < panels.length - 1) {
+          currentPanel++;
+          updateDisplay();
+        }
+      });
+      
+      // Previous button click
+      prevButton.addEventListener('click', function() {
+        if (currentPanel > 0) {
+          currentPanel--;
+          updateDisplay();
+        }
+      });
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' && currentPanel < panels.length - 1) {
+          currentPanel++;
+          updateDisplay();
+        } else if (e.key === 'ArrowLeft' && currentPanel > 0) {
+          currentPanel--;
+          updateDisplay();
+        }
+      });
+      
+      // Initialize
+      updateDisplay();
+    });
+  </script>
+</body>
+</html>

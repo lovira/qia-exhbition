@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>About - re/directing abundance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@300..700&display=swap');
+        
+        /* Comic Viewer Styles */
+        .comic-content {
+            width: 40%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            padding-left: 10%;
+        }
+        
+        .comic-content::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .comic-viewer {
+            width: 90%;
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 5px;
+       
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .comic-panel {
+            display: none;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .comic-panel.active {
+            display: block;
+        }
+        
+        .panel-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        
+        .nav-button {
+            background-color: #AB6E7E;
+            color: #e8e8e8;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .nav-button:hover {
+            background-color: #8d5966;
+        }
+        
+        .nav-button:disabled {
+            background-color: rgba(171, 110, 126, 0.4);
+            cursor: not-allowed;
+        }
+        
+        .panel-counter {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            color:  #8d5966;
+            font-family: "Space Grotesk", sans-serif;
+        }
+        
+        .comic-title {
+            color: #43438E;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+/* 
+        .comic-title  h1 { 
+        font-size: 3.5rem; 
+        color: #f3d8b7bf;
+
+        } */
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://qiarchive.org/en/">QIA</a></li>
+            </ul>
+        </nav>
+    
+        <div class="about-content">
+            <h2 class="about-title">re/<br>directing<br>abundance</h2>
+            <p class="subtitle"><i>a qiarchive exhibition</i></p>
+        </div>
+    
+        <div class="comic-content">
+            <div class="comic-viewer">
+                <h1 class="comic-title">Heteronormatif dalam Hubungan Lesbian</h1>
+                
+                <div class="comic-panels">
+                    <!-- Comic panels - Replace src attributes with your actual image paths -->
+                    <div class="comic-panel active">
+                      <img src="/Content/comic-panels/1.png" alt="Comic Panel 1" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels/2.png" alt="Comic Panel 2" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels/3.png" alt="Comic Panel 3" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels/4.png" alt="Comic Panel 4" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels/5.png" alt="Comic Panel 5" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels/6.png" alt="Comic Panel 6" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels/7.png" alt="Comic Panel 7" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels/8.png" alt="Comic Panel 8" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels/9.png" alt="Comic Panel 9" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                    <img src="Content/comic-panels/10.png" alt="Comic Panel 10" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels/11.png" alt="Comic Panel 11" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels/12.png" alt="Comic Panel 12" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels/13.png" alt="Comic Panel 13" class="panel-img">
+                    </div>
+                    
+                      
+            </div>
+            <div class="panel-counter" id="panelCounter">Panel 1 of 5</div>
+            <div class="nav-buttons">
+                <button class="nav-button" id="prevButton" disabled>Previous</button>
+                <button class="nav-button" id="nextButton">Next</button>
+            </div>
+        </div>
+    </div>
+
+          <script src="comic-script.js"></script>
+
+</body>
+</html>
