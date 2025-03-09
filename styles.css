@@ -85,6 +85,7 @@ h1 {
 .subtitle {
     font-size: 1em;
     color: #e8e8e8d3;
+    
 }
 
 #animation-container {
@@ -182,6 +183,8 @@ h1 {
     overflow-y: scroll; /* Enable vertical scrolling */
     -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
     scrollbar-width: none;  /* Hide scrollbar in Firefox */
+
+
 }
 
 .essay-content  h1 { 
@@ -198,7 +201,8 @@ h1 {
     margin-bottom: 1rem; 
     text-align: justify;
     text-justify: inter-word;
-    line-height: 1.5rem;
+    line-height: 2.0rem;
+    font-size: 1.4rem;
 }
 
 
@@ -306,8 +310,8 @@ h1 {
     font-size: clamp(0.7rem, 1vw, 0.85rem);
     margin-bottom: 0.8em;
     line-height: 1.3;
-    flex-grow: 1; /* Let the brief take available space */
-    color: #e8e8e8d3; /* Ensure consistent text color */
+    flex-grow: 1; 
+    color: #e8e8e8d3; 
 }
 
 .artist-media {
@@ -358,3 +362,151 @@ h1 {
     }
 }
 
+
+
+
+.comic-column {
+    width: 65%;
+    margin-left: 5%; 
+    color: #e8e8e8d3;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 10vh; 
+    overflow-y: scroll; /* Enable vertical scrolling */
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+}
+
+.comic-content::-webkit-scrollbar {
+    display: none;
+}
+
+.comic-viewer {
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 10);
+}
+
+.comic-panel {
+    display: none;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.comic-panel.active {
+    display: block;
+}
+
+.panel-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.nav-button {
+    background-color: #AB6E7E;
+    color: #e8e8e8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #8d5966;
+}
+
+.nav-button:disabled {
+    background-color: rgba(171, 110, 126, 0.4);
+    cursor: not-allowed;
+}
+
+.panel-counter {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color:  #8d5966;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+.comic-title {
+    color: #43438E;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+} 
+
+/* ARROW BACK */
+.arrow-back {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1em;
+    text-decoration: none;
+    z-index: 100;
+    text-align: right;
+    margin-right: 20%;
+}
+
+.arrow-back span {
+    display: inline-block;
+    color:#ffffffbf;
+    transition: all 0.5s ease;
+    position: relative;
+    transform: translateX(0);
+}
+
+.arrow-back:hover span {
+    color: #b37a89;
+}
+
+.arrow-back:hover span:nth-child(1) {
+    transform: translateX(-2px);
+    transition-delay: 0.1s;
+}
+
+.arrow-back:hover span:nth-child(2) {
+    transform: translateX(-4px);
+    transition-delay: 0.15s;
+}
+
+.arrow-back:hover span:nth-child(3) {
+    transform: translateX(-6px);
+    transition-delay: 0.2s;
+}
+
+.arrow-back:hover span:nth-child(4) {
+    transform: translateX(-4px);
+    transition-delay: 0.25s;
+}
+
+.arrow-back:hover span:nth-child(5) {
+    transform: translateX(-2px);
+    transition-delay: 0.3s;
+}
+
+.arrow-back:hover span:nth-child(6) {
+    transform: translateX(0);
+    transition-delay: 0.35s;
+}
+
+.arrow-back:hover span:nth-child(7) {
+    transform: translateX(2px);
+    transition-delay: 0.4s;
+}
+.arrow-back .arrow::before {
+        content: "←"; 
+        margin-right: 5px;
+    }
