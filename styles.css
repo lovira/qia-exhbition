@@ -214,7 +214,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 25px;
-    width: 90%;
+    width: 80%;
     margin-top: 15px;
     position: relative;
     padding-left: 5%;
@@ -233,7 +233,7 @@ h1 {
     justify-content: flex-start;
     cursor: pointer;
     transition: all 0.4s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
     overflow: hidden; /* Prevent text overflow */
 }
  /* Reset visited states to match normal states */
@@ -248,7 +248,7 @@ h1 {
     transform: scale(1.03);
     z-index: 10;
     background-color: rgba(171, 110, 126, 0.25);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
 /* Reset visited states to match normal states */
@@ -317,7 +317,6 @@ h1 {
     color: rgba(232, 232, 232, 0.8);
 }
 
-/* Ensure any links inside cards maintain consistent appearance */
 .artist-brief a, 
 .artist-name a,
 .artist-brief a:visited,
