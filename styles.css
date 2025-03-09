@@ -362,33 +362,47 @@ h1 {
     }
 }
 
-
+/* HANS */
 
 
 .comic-column {
     width: 65%;
-    margin-left: 5%; 
+    margin-left: 0; /* Reduced from 5% to move content left */
     color: #e8e8e8d3;
     display: flex;
     flex-direction: column;
+    align-items: center; /* Align children to the left */
     height: 100vh;
-    padding-top: 10vh; 
-    overflow-y: scroll; /* Enable vertical scrolling */
-    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
-    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+    padding-top: 10vh;
+    padding-left: 5%; /* Adding padding instead of margin */
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 .comic-content::-webkit-scrollbar {
     display: none;
 }
 
+.comic-column .comic-title {
+    color: #f3d8b7df;
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: "Space Grotesk", serif;
+    font-weight: 500;
+    align-self: flex-start; /* Ensure title aligns left */
+}
+
 .comic-viewer {
     width: 60%;
+    margin-right: 10%; /* Add right margin for better positioning */
     background-color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 10);
 }
+
 
 .comic-panel {
     display: none;
@@ -434,13 +448,14 @@ h1 {
     background-color: rgba(171, 110, 126, 0.4);
     cursor: not-allowed;
 }
-
 .panel-counter {
     text-align: center;
-    margin-top: 10px;
+    margin: 15px auto 10px auto; /* Top and bottom margins, auto left and right */
     font-size: 14px;
-    color:  #8d5966;
+    color: #8d5966;
     font-family: "Space Grotesk", sans-serif;
+    width: 100%; /* Take full width of parent */
+    display: block; /* Ensure it's a block-level element */
 }
 
 .comic-title {
@@ -510,3 +525,42 @@ h1 {
         content: "←"; 
         margin-right: 5px;
     }
+
+
+.artist-item .artist-brief + .artist-brief {
+    margin-top: -10px;
+}
+
+.comic-title {
+    color: #f3d8b7bf;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: "Space Grotesk", serif;
+    font-weight: 500;
+}
+
+/* Ensure the comic viewer doesn't have a title inside */
+/* Comic viewer adjustments to ensure proper centering */
+.comic-viewer {
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 10);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all child elements */
+    text-align: center; /* Center text content */
+}
+
+/* Ensure panel counter and buttons align with the viewer */
+.panel-counter, .nav-buttons {
+    width: 60%;
+}
+.comic-panels {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

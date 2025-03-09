@@ -6,9 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@300..700&display=swap');
-        
-
-     
     </style>
 </head>
 <body>
@@ -31,8 +28,10 @@
         </div>
     
         <div class="comic-column">
-            <div class="comic-viewer">
-                <h1 class="comic-title">Heteronormatif dalam Hubungan Lesbian</h1>         
+            <!-- Comic title moved outside the viewer -->
+            <h1 class="comic-title">Heteronormatif dalam Hubungan Lesbian</h1>
+            
+            <div class="comic-viewer">        
                 <div class="comic-panels">
                     <!-- Comic panels - Replace src attributes with your actual image paths -->
                     <div class="comic-panel active">
@@ -74,18 +73,16 @@
                     <div class="comic-panel">
                         <img src="Content/comic-panels/13.png" alt="Comic Panel 13" class="panel-img">
                     </div>
-                    
-                      
+                </div>
+                <!-- Move panel counter and buttons inside the comic viewer -->
+                <div class="panel-counter" id="panelCounter">Panel 1 of 13</div>
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevButton" disabled>Previous</button>
+                    <button class="nav-button" id="nextButton">Next</button>
+                </div>
             </div>
-            <div class="panel-counter" id="panelCounter">Panel 1 of 5</div>
-            <div class="nav-buttons">
-                <button class="nav-button" id="prevButton" disabled>Previous</button>
-                <button class="nav-button" id="nextButton">Next</button>
-            </div>
-        </div>
         </div>
     </div>
     <script src="comic-script.js"></script>
 </body>
 </html>
- 
