@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Works - re/directing abundance</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@300..700&display=swap');
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="works.html">Works</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://qiarchive.org/en/">QIA</a></li>
+            </ul>
+        </nav>
+    
+        <div class="about-content">
+            <h2 class="about-title">re/<br>directing<br>abundance</h2>
+            <p class="subtitle"><i>a qiarchive exhibition</i></p>
+            <a href="works.html" class="arrow-back">
+                <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
+            </a>  
+        </div>
+    
+        <div class="comic-column">
+            <!-- Comic title moved outside the viewer -->
+            <h1 class="comic-title">Trans La La</h1>
+            
+            <div class="comic-viewer">        
+                <div class="comic-panels">
+                    <!-- Comic panels - Replace src attributes with your actual image paths -->
+                    <div class="comic-panel active">
+                      <img src="/Content/comic-panels-2/1.png" alt="Comic Panel 1" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels-2/2.png" alt="Comic Panel 2" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels-2/3.png" alt="Comic Panel 3" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels-2/4.png" alt="Comic Panel 4" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels-2/5.png" alt="Comic Panel 5" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                      <img src="Content/comic-panels-2/6.png" alt="Comic Panel 6" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels-2/7.png" alt="Comic Panel 7" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels-2/8.png" alt="Comic Panel 8" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                        <img src="Content/comic-panels-2/9.png" alt="Comic Panel 9" class="panel-img">
+                    </div>
+                    <div class="comic-panel">
+                    <img src="Content/comic-panels-2/10.png" alt="Comic Panel 10" class="panel-img">
+                    </div>
+                </div>
+                <!-- Move panel counter and buttons inside the comic viewer -->
+                <div class="panel-counter" id="panelCounter">Panel 1 of 13</div>
+                <div class="nav-buttons">
+                    <button class="nav-button" id="prevButton" disabled>Previous</button>
+                    <button class="nav-button" id="nextButton">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="comic-script.js"></script>
+</body>
+</html>
