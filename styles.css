@@ -7,7 +7,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin-bottom: 60px; /* Same as footer height */
 }
 
 .container {
@@ -16,6 +17,7 @@ body {
     height: 90vh;
     position: relative;
     align-items: flex-start; /* Changed to align-items: flex-start */
+    margin-bottom: 60px; /* Provide space for footer */
 }
 
 .sidebar {
@@ -554,17 +556,37 @@ h1 {
     align-items: center;
 }
 
-/* 
-.comic-title-right {
-    position: absolute;
-    right: 15%;
-    left: auto;
-    top: 130px;
-    text-align: right;
-    color: #f3d8b7bf;
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-family: "Space Grotesk", serif;
-    font-weight: 500;
-    z-index: 10;
-} */
+/* NEW FOOTER STYLES */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 100;
+}
+
+.footer a {
+    color: #000000;
+    text-decoration: none;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.footer a:hover {
+    color: #000000;
+}
+
+/* Space for future logo */
+.footer-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+}
