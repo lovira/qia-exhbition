@@ -212,6 +212,10 @@ h1, .about-title {
     overflow-y: scroll;
     margin-left: calc(var(--sidebar-width) + 5%);
     padding-top: 5vh;
+    padding-right: 5vh;
+    text-align: justify;      
+    text-justify: inter-word; 
+    
 }
 
 .essay-content h1 { 
@@ -734,7 +738,7 @@ h1, .about-title {
     }
     
     h1, .about-title {
-        font-size: 2.5em;
+        font-size: .5em;
     }
     
     .about-title {
@@ -770,6 +774,8 @@ h1, .about-title {
     .essay-content p {
         font-size: 1rem;
         line-height: 1.5rem;
+        text-align: justify;        /* This line makes the text justified */
+        text-justify: inter-word; 
     }
 }
 
