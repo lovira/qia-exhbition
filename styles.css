@@ -1,4 +1,7 @@
-/* CSS Variables for consistent colors and values */
+/* ================================
+   CSS VARIABLES & GLOBAL RESETS
+   ================================ */
+
 :root {
     --primary-bg: #43438E;
     --primary-text: #e8e8e8d3;
@@ -35,26 +38,20 @@ body {
 }
 
 /* Hide scrollbars universally */
-::-webkit-scrollbar {
-    display: none;
-}
-
-* {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+::-webkit-scrollbar { display: none; }
+* { -ms-overflow-style: none; scrollbar-width: none; }
 
 a {
     text-decoration: none;
     color: inherit;
     transition: var(--transition-standard);
 }
+a:hover { color: var(--accent-color); }
 
-a:hover {
-    color: var(--accent-color);
-}
+/* ================================
+   DESKTOP LAYOUT (Base Styles)
+   ================================ */
 
-/* Basic layout structure */
 .container {
     display: flex;
     width: 100%;
@@ -63,7 +60,7 @@ a:hover {
     align-items: flex-start;
 }
 
-/* Sidebar navigation */
+/* Sidebar */
 .sidebar {
     width: var(--sidebar-width);
     padding: 20px;
@@ -106,6 +103,9 @@ a:hover {
     color: #43438E;
 }
 
+
+
+
 /* Main content areas */
 .content {
     width: 40%;
@@ -129,7 +129,39 @@ a:hover {
     margin-left: calc(var(--sidebar-width) + 5%);
 }
 
-/* Typography styles */
+/* Content columns */
+.about-column, 
+.works-column, 
+.essay-content,
+.comic-column {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    margin-left: calc(var(--sidebar-width) + 5%);
+}
+
+.works-column {
+    padding-top: 10vh;
+}
+
+.essay-content {
+    padding-top: 5vh;
+    padding-right: 5vh;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.comic-column {
+    align-items: flex-start;
+    padding-left: 5%;
+}
+
+/* ================================
+   TYPOGRAPHY
+   ================================ */
+
 h1, .about-title {
     font-size: 5em;
     line-height: 1.2;
@@ -140,84 +172,17 @@ h1, .about-title {
 
 .about-title {
     font-size: 4.5em !important;
-    line-height: 1.2;
     margin-bottom: 15px;
     letter-spacing: -0.02em;
     text-align: left;
     padding-left: 0;
-    color: var(--accent-color);
 }
 
 .subtitle {
     font-size: 1em;
 }
 
-/* Animation for homepage title */
-.index-page h1 {
-    transform: scale(0.8);
-    opacity: 0;
-    animation: zoomInFade 3s ease forwards;
-}
-
-@keyframes zoomInFade {
-    from {
-        transform: scale(0.2);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Animation container */
-#animation-container {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-60%);
-    right: -7%;
-    width: 60vw;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    pointer-events: none; 
-    z-index: 1;
-}
-
-/* Content columns */
-.about-column, .works-column, .essay-content {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: scroll;
-    margin-left: calc(var(--sidebar-width) + 5%);
-}
-
-.about-column {
-    margin-right: 5%;
-}
-
-.works-column {
-    margin-left: 5%;
-    padding-top: 10vh;
-}
-
-.essay-content {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: scroll;
-    margin-left: calc(var(--sidebar-width) + 5%);
-    padding-top: 5vh;
-    padding-right: 5vh;
-    text-align: justify;        /* This line makes the text justified */
-    text-justify: inter-word; 
-    
-}
-
+/* Essay content typography */
 .essay-content h1 { 
     font-size: 3.5rem; 
     color: var(--title-color);
@@ -252,28 +217,39 @@ h1, .about-title {
     color: var(--title-color);
 }
 
-.essay-content .artist-name {
-    font-size: 1.2rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
+/* ================================
+   HOMEPAGE ANIMATION
+   ================================ */
+
+.index-page h1 {
+    transform: scale(0.8);
+    opacity: 0;
+    animation: zoomInFade 3s ease forwards;
 }
 
-.essay-content .pdf-link {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+@keyframes zoomInFade {
+    from { transform: scale(0.2); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
-.essay-content .pdf-link a {
-    color: var(--accent-color);
-    text-decoration: none;
-    transition: var(--transition-standard);
+#animation-container {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-60%);
+    right: -7%;
+    width: 60vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    pointer-events: none; 
+    z-index: 1;
 }
 
-.essay-content .pdf-link a:hover {
-    color: var(--accent-hover);
-}
+/* ================================
+   WORKS GRID
+   ================================ */
 
-/* Works grid layout */
 .uniform-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -285,7 +261,6 @@ h1, .about-title {
     padding-top: 10%;
 }
 
-/* Artist items in grid */
 .artist-item {
     position: relative;
     aspect-ratio: 1/1;
@@ -299,11 +274,11 @@ h1, .about-title {
     transition: var(--transition-standard);
     box-shadow: var(--box-shadow);
     overflow: hidden;
-        /* Background image properties */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .artist-item::before {
     content: '';
     position: absolute;
@@ -312,36 +287,30 @@ h1, .about-title {
     right: 0;
     bottom: 0;
     background-color: var(--artist-color1);
-    opacity: 0.85; /* Adjust this value (0.7-0.9 works well) */
+    opacity: 0.85;
     z-index: 1;
     transition: var(--transition-standard);
 }
+
 .artist-item:hover::before {
-    opacity: 0.7; /* Show more image on hover */
+    opacity: 0.7;
 }
 
-/* Ensure text appears above overlay */
 .artist-item > * {
     position: relative;
     z-index: 2;
 }
 
-
 .artist-item:hover {
     transform: scale(1.03);
     z-index: 10;
-    background-color: var(--accent-medium);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-/* Color variations for artist items */
+/* Color variations */
 .artist-item:nth-child(even) {
     background-color: var(--artist-color2);
     border-color: var(--artist-border2);
-}
-
-.artist-item:nth-child(even):hover {
-    background-color: rgba(107, 142, 187, 0.25);
 }
 
 .artist-item:nth-child(3n) {
@@ -349,24 +318,12 @@ h1, .about-title {
     border-color: var(--artist-border3);
 }
 
-.artist-item:nth-child(3n):hover {
-    background-color: rgba(134, 124, 192, 0.25);
-}
-
-/* Artist item text styling */
+/* Artist item text */
 .artist-name {
     color: var(--accent-color);
     font-size: 1.2rem;
     margin-bottom: 0.6em;
     position: relative;
-}
-
-.artist-name::after {
-    display: none;
-}
-
-.artist-item:hover .artist-name::after {
-    display: none;
 }
 
 .artist-brief {
@@ -388,29 +345,22 @@ h1, .about-title {
     text-decoration: underline;
 }
 
-/* Decorative elements */
-.circle-decoration {
-    position: absolute;
-    border-radius: 50%;
-    background-color: rgba(171, 110, 126, 0.1);
-    z-index: -1;
-}
+/* ================================
+   COMIC VIEWER
+   ================================ */
 
-/* Comic title styling - maintain left alignment */
 .comic-title {
     color: var(--title-color);
     font-size: 3.5rem;
     font-family: "Space Grotesk", serif;
     font-weight: 500;
     margin-bottom: 2rem;
-    padding-left: 0; /* Remove padding since we're already aligning left */
     width: 100%;
     line-height: 1.2;
     word-break: break-word;
     overflow-wrap: break-word;
 }
 
-/* Comic viewer now without title */
 .comic-viewer {
     width: 100%;
     max-width: 450px;
@@ -420,11 +370,11 @@ h1, .about-title {
     box-shadow: var(--box-shadow);
     display: flex;
     flex-direction: column;
-    align-items: center; /* Keep internal content centered */
+    align-items: center;
     text-align: center;
     margin-top: 0;
-    align-self: flex-start; /* Ensures the viewer aligns to the left */
-    margin-left: 0; /* Ensures no left margin pushes it in */
+    align-self: flex-start;
+    margin-left: 0;
 }
 
 .comic-panel {
@@ -453,6 +403,7 @@ h1, .about-title {
     align-items: center;
 }
 
+/* Navigation buttons */
 .nav-buttons {
     display: flex;
     justify-content: center;
@@ -493,7 +444,10 @@ h1, .about-title {
     width: 100%;
 }
 
-/* Back button styling */
+/* ================================
+   BACK BUTTON
+   ================================ */
+
 .arrow-back {
     font-family: "Space Grotesk", sans-serif;
     font-size: 1em;
@@ -520,7 +474,7 @@ h1, .about-title {
     margin-right: 5px;
 }
 
-/* Hover animation for back button */
+/* Hover animation */
 .arrow-back:hover span:nth-child(1) { transform: translateX(-2px); transition-delay: 0.1s; }
 .arrow-back:hover span:nth-child(2) { transform: translateX(-4px); transition-delay: 0.15s; }
 .arrow-back:hover span:nth-child(3) { transform: translateX(-6px); transition-delay: 0.2s; }
@@ -529,26 +483,53 @@ h1, .about-title {
 .arrow-back:hover span:nth-child(6) { transform: translateX(0); transition-delay: 0.35s; }
 .arrow-back:hover span:nth-child(7) { transform: translateX(2px); transition-delay: 0.4s; }
 
-/* Spacing fix */
-.artist-item .artist-brief + .artist-brief {
-    margin-top: -10px;
+/* ================================
+   VIDEO CONTAINER
+   ================================ */
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    box-shadow: var(--box-shadow);
+    background-color: var(--accent-light);
+    border-radius: 5px;
 }
 
-/* Responsive breakpoints */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 5px;
+    transition: var(--transition-standard);
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+   ================================ */
+
+/* Large desktop */
 @media (min-width: 1200px) {
     .uniform-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
+/* Tablet */
 @media (max-width: 992px) {
     h1, .about-title {
         font-size: 4em;
     }
     
     .about-title {
-        font-size:3em;
-       margin-right: 10%
+        font-size: 3em;
+        margin-right: 10%;
     }
     
     .content, .about-content {
@@ -565,7 +546,7 @@ h1, .about-title {
     }
 }
 
-/* Updated mobile breakpoint for vertical flow */
+/* Mobile */
 @media (max-width: 768px) {
     :root {
         --sidebar-width: 5%;
@@ -584,7 +565,7 @@ h1, .about-title {
         margin-bottom: 20px;
     }
     
-    /* Fix sidebar to top of screen */
+    /* Mobile sidebar */
     .sidebar {
         position: fixed;
         top: 0;
@@ -633,7 +614,7 @@ h1, .about-title {
         height: auto;
     }
     
-    /* Stack content vertically */
+    /* Mobile content */
     .content, 
     .about-content,
     .about-column, 
@@ -655,7 +636,8 @@ h1, .about-title {
     }
     
     h1, .about-title {
-        font-size: 3em;
+        font-size: 3
+        em;
         text-align: center;
     }
     
@@ -677,7 +659,6 @@ h1, .about-title {
         gap: 15px;
     }
     
-    /* Comic specific adjustments */
     .comic-column {
         align-items: center;
     }
@@ -697,7 +678,6 @@ h1, .about-title {
         margin-bottom: 30px;
     }
     
-    /* Hide animation container on mobile */
     #animation-container {
         display: none;
     }
@@ -722,9 +702,14 @@ h1, .about-title {
     .artist-media {
         font-size: 0.9em;
     }
+    
+    .video-container {
+        margin: 0 auto 1.5rem auto;
+        width: 90%;
+    }
 }
 
-/* Small mobile breakpoint refinements */
+/* Small mobile */
 @media (max-width: 480px) {
     body {
         padding-top: 50px;
@@ -739,12 +724,12 @@ h1, .about-title {
     }
     
     h1, .about-title {
-        font-size: .5em;
+        font-size: 2.5em;
     }
     
     .about-title {
         font-size: 2em;
-        margin-right: 10%
+        margin-right: 10%;
     }
     
     .subtitle {
@@ -776,12 +761,16 @@ h1, .about-title {
     .essay-content p {
         font-size: 1rem;
         line-height: 1.5rem;
-        text-align: justify;        /* This line makes the text justified */
-        text-justify: inter-word; 
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    
+    .video-container {
+        margin-bottom: 1rem;
     }
 }
 
-/* Extra small mobile screens */
+/* Extra small mobile */
 @media (max-width: 375px) {
     body {
         padding-top: 45px;
@@ -821,42 +810,3 @@ h1, .about-title {
         max-width: 90px;
     }
 }
-
-/* Responsive video container */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 2rem;
-    max-width: 100%;
-    box-shadow: var(--box-shadow);
-    background-color: var(--accent-light);
-    border-radius: 5px;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 5px;
-    transition: var(--transition-standard);
-}
-
-/* Add some responsive adjustments for video */
-@media (max-width: 768px) {
-    .video-container {
-        margin: 0 auto 1.5rem auto;
-        width: 90%;
-    }
-}
-
-@media (max-width: 480px) {
-    .video-container {
-        margin-bottom: 1rem;
-    }
-}
-
