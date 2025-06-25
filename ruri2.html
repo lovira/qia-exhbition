@@ -3,559 +3,98 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poetry - re/directing abundance</title>
+    <title>About - re/directing abundance</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        /* Import fonts */
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@300..700&display=swap');
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
-        
-        /* CSS Variables for consistent colors and values */
-        :root {
-            --primary-bg: #43438E;
-            --primary-text: #e8e8e8d3;
-            --accent-color: #AB6E7E;
-            --accent-light: rgba(171, 110, 126, 0.3);
-            --accent-medium: rgba(171, 110, 126, 0.5);
-            --accent-hover: #8d5966;
-            --title-color: #f3d8b7bf;
-            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-            --transition-standard: all 0.3s ease;
-            
-            --artist-color1: rgba(171, 110, 126, 0.15);
-            --artist-border1: rgba(171, 110, 126, 0.3);
-            --artist-color2: rgba(107, 142, 187, 0.15);
-            --artist-border2: rgba(107, 142, 187, 0.3);
-            --artist-color3: rgba(134, 124, 192, 0.15);
-            --artist-border3: rgba(134, 124, 192, 0.3);
-            
-            --footer-height: 40px;
-            --sidebar-width: 15%;
-        }
 
-        /* Global styles and resets */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: var(--primary-bg);
-            font-family: "Space Grotesk", serif;
-            color: var(--primary-text);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
-            margin-bottom: var(--footer-height);
-        }
+        /* Mobile-specific styles for the back arrow in header */
+        @media (max-width: 768px) {
+            .sidebar .back-link {
+                position: absolute;
+                left: 60px; /* Position after the logo */
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+                padding: 5px 10px;
+                background-color: rgba(67, 67, 142, 0.9);
+                border-radius: 5px;
+                z-index: 1001;
+            }
 
-        /* Hide scrollbars universally */
-        ::-webkit-scrollbar {
-            display: none;
-        }
+            .sidebar .back-link span {
+                color: #ffffff;
+                font-size: 0.9em;
+            }
 
-        * {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+            .sidebar .back-link:hover {
+                background-color: rgba(67, 67, 142, 1);
+            }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition-standard);
-        }
-
-        a:hover {
-            color: var(--accent-color);
-        }
-
-        /* Basic layout structure */
-        .container {
-            display: flex;
-            width: 100%;
-            min-height: 90vh;
-            position: relative;
-            align-items: flex-start;
-            margin-bottom: var(--footer-height);
-        }
-
-        /* Sidebar navigation */
-        .sidebar {
-            width: var(--sidebar-width);
-            padding: 20px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            width: var(--sidebar-width);
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        .sidebar ul li {
-            margin-bottom: 30px;
-        }
-
-        .sidebar ul li a {
-            font-size: 16px;
-        }
-
-        /* Main content areas */
-        .about-content {
-            width: 25%;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-            flex-shrink: 0;
-        }
-
-        /* Typography styles */
-        h1, .about-title {
-            font-size: 5em;
-            line-height: 1.2;
-            color: var(--accent-color);
-            transform: scale(1);
-            opacity: 1;
+            /* Hide the original return arrow on mobile */
+            .about-content .arrow-back {
+                display: none;
+            }
         }
 
         .about-title {
-            font-size: 3.5em;
-        }
-
-        .subtitle {
-            font-size: 1em;
-        }
-
-        /* Comic column styles */
-        .comic-column {
-            width: 65%;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            height: 100vh;
-            padding-left: 5%;
-            overflow-y: scroll;
-        }
-
-        /* Comic title styling */
-        .comic-title {
-            color: var(--title-color);
-            font-size: 3.5rem;
-            font-family: "Space Grotesk", serif;
-            font-weight: 500;
-            margin-bottom: 2rem;
-            width: 100%;
+            font-size: 4.5em !important;
             line-height: 1.2;
-            word-break: break-word;
-            overflow-wrap: break-word;
-        }
-
-        /* Back button styling */
-        .arrow-back {
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 1em;
-            text-decoration: none;
-            z-index: 10;
-            text-align: right;
-            margin-right: 20%;
-        }
-
-        .arrow-back span {
-            display: inline-block;
-            color: #ffffffbf;
-            transition: all 0.5s ease;
-            position: relative;
-            transform: translateX(0);
-        }
-
-        .arrow-back:hover span {
-            color: #b37a89;
-        }
-
-        .arrow-back .arrow::before {
-            content: "←"; 
-            margin-right: 5px;
-        }
-
-        /* Hover animation for back button */
-        .arrow-back:hover span:nth-child(1) { transform: translateX(-2px); transition-delay: 0.1s; }
-        .arrow-back:hover span:nth-child(2) { transform: translateX(-4px); transition-delay: 0.15s; }
-        .arrow-back:hover span:nth-child(3) { transform: translateX(-6px); transition-delay: 0.2s; }
-        .arrow-back:hover span:nth-child(4) { transform: translateX(-4px); transition-delay: 0.25s; }
-        .arrow-back:hover span:nth-child(5) { transform: translateX(-2px); transition-delay: 0.3s; }
-        .arrow-back:hover span:nth-child(6) { transform: translateX(0); transition-delay: 0.35s; }
-        .arrow-back:hover span:nth-child(7) { transform: translateX(2px); transition-delay: 0.4s; }
-
-        /* Footer styles */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            height: var(--footer-height);
-            display: flex;
-            justify-content: left;
-            align-items: left;
-            z-index: 9999;
-        }
-
-        .footer a {
-            color: #000000;
-            text-decoration: none;
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 1.2em;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-        }
-
-        .footer a:hover {
-            color: var(--accent-color);
-        }
-
-        .footer-logo {
-            height: 40px;
-            width: auto;
-            margin-right: 10px;
-        }
-
-        /* Poetry specific styles */
-        .audio-player {
-            width: 100%;
-            max-width: 450px;
-            padding: 20px;
-
-            margin-bottom: 30px;
-
-        }
-        
-        .audio-player h3 {
-            color: var(--title-color);
             margin-bottom: 15px;
-            font-weight: 500;
-        }
-        
-        .audio-controls {
-            width: 100%;
-        }
-        
-        audio {
-            width: 100%;
-            outline: none;
-        }
-        
-        .poetry-container {
-            width: 100%;
-            max-width: 450px;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: var(--box-shadow);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            margin-top: 0;
-        }
-        
-        .poetry-page {
-            display: none;
-            margin: 0 auto;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .poetry-page.active {
-            display: block;
-        }
-        
-        .page-img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            object-fit: contain;
-        }
-        
-        .poetry-pages {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 20px;
-            width: 100%;
-        }
-
-        .nav-button {
-            background-color: var(--accent-color);
-            color: var(--primary-text);
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-family: "Space Grotesk", sans-serif;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            flex: 1;
-            max-width: 120px;
-        }
-
-        .nav-button:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .nav-button:disabled {
-            background-color: var(--accent-light);
-            cursor: not-allowed;
-        }
-
-        .panel-counter {
-            text-align: center;
-            margin: 15px 0 10px 0;
-            font-size: 14px;
-            color: var(--accent-hover);
-            font-family: "Space Grotesk", sans-serif;
-            width: 100%;
-        }
-
-        /* Lightbox styles */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 30px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
-
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 90%;
-        }
-
-        .lightbox-caption {
-            margin: auto;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 50px;
-        }
-
-        .close-lightbox {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-            z-index: 1001;
-        }
-
-        .close-lightbox:hover,
-        .close-lightbox:focus {
-            color: var(--accent-color);
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        .zoom-icon {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .poetry-page {
-            position: relative;
-        }
-        
-        .poetry-page:hover .zoom-icon {
-            opacity: 1;
-        }
-        
-        /* Zoom control in lightbox */
-        .zoom-controls {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-            padding: 5px 15px;
-            display: flex;
-            gap: 15px;
-            z-index: 1001;
-        }
-        
-        .zoom-btn {
-            color: white;
-            font-size: 20px;
-            cursor: pointer;
-            padding: 5px;
-        }
-        
-        .zoom-btn:hover {
-            color: var(--accent-color);
-        }
-
-        /* Responsive breakpoints */
-        @media (max-width: 992px) {
-            h1, .about-title {
-                font-size: 4em;
-            }
-            
-            .about-title {
-                font-size: 3em;
-            }
-            
-            .audio-player, .poetry-container {
-                max-width: 400px;
-            }
-            
-            .comic-title {
-                font-size: 2.2rem;
-            }
+            letter-spacing: -0.02em;
+            text-align: left;
+            padding-left: 0;
         }
 
         @media (max-width: 768px) {
-            :root {
-                --footer-height: 50px;
-                --sidebar-width: 20%;
-            }
-            
-            .container {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                padding: 10px;
-            }
-            
-            .sidebar ul {
-                width: 100%;
-                flex-direction: row;
-                justify-content: space-around;
-                height: auto;
-                margin: 10px 0;
-            }
-            
-            .sidebar ul li {
-                margin-bottom: 0;
-                margin-right: 10px;
-            }
-            
-            .about-content {
-                width: 90%;
-                margin: 0 auto;
-                height: auto;
-                padding: 20px 0;
-            }
-            
-            h1, .about-title {
-                font-size: 3em;
-            }
-            
             .about-title {
-                font-size: 2.5em;
-            }
-            
-            .comic-column {
-                width: 90%;
-                padding-left: 0;
-                align-items: center;
-                margin: 0 auto;
-                height: auto;
-                max-height: 70vh;
-            }
-            
-            .audio-player, .poetry-container {
-                max-width: 90%;
-            }
-            
-            .comic-title {
-                font-size: 2rem;
-                padding-left: 0;
-                text-align: center;
-                align-self: center;
-            }
-            
-            .footer a {
-                font-size: 1em;
-            }
-            
-            .footer-logo {
-                height: 30px;
+                font-size: 2.8em !important;
+                line-height: 1.3;
             }
         }
 
-        @media (max-width: 480px) {
-            h1, .about-title {
-                font-size: 2.5em;
-            }
-            
-            .about-title {
-                font-size: 2em;
-            }
-            
-            .comic-column {
-                width: 95%;
-            }
-            
-            .audio-player, .poetry-container {
-                max-width: 95%;
-                padding: 15px;
-            }
-            
-            .comic-title {
-                font-size: 1.8rem;
-            }
-            
-            .nav-button {
-                padding: 8px 15px;
-                font-size: 14px;
-                max-width: 100px;
-            }
-            
-            .audio-player h3 {
-                font-size: 1.2rem;
-            }
+        /* Audio player styling */
+        .audio-container {
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .audio-container audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            background-color: var(--accent-light);
+        }
+
+        .audio-container audio::-webkit-media-controls-panel {
+            background-color: var(--accent-light);
+        }
+
+        .audio-container audio::-webkit-media-controls-current-time-display,
+        .audio-container audio::-webkit-media-controls-time-remaining-display {
+            color: var(--primary-text);
+        }
+
+        .audio-container audio::-webkit-media-controls-play-button {
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .audio-container audio::-webkit-media-controls-play-button:hover {
+            background-color: var(--accent-hover);
         }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
 </head>
 <body>
     <div class="container">
         <nav class="sidebar">
             <ul>
+                <li><a href="https://qiarchive.org/"><img class="sidebar-logo" src="qia-logo-clear.png" alt="QIA Logo"></a></li>
+                <li><a href="works.html" class="back-link arrow-back">
+                    <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
+                </a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="works.html">Works</a></li>
                 <li><a href="about.html">About</a></li>
@@ -567,230 +106,23 @@
             <p class="subtitle"><i>a qiarchive exhibition</i></p>
             <a href="works.html" class="arrow-back">
                 <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
-            </a>  
+            </a>   
         </div>
-    
-        <div class="comic-column">
-            <!-- Poetry title -->
-            <h1 class="comic-title">selamat pagi, sobs</h1>
-            
-            <!-- Audio player section -->
-            <div class="audio-player">
-                <h3>Audio puisi</h3>
-                <div class="audio-controls">
+
+        <div id="essay-container" class="essay-content">
+            <div class="essay-header">
+                <h1 class="about-title">selamat pagi, sobs</h1>
+                <p class="artist-name">Artist name: Ruri</p>
+            </div>
+            <div class="essay-body">
+                <div class="audio-container">
                     <audio controls>
                         <source src="Content/ruri-audio.mp3" type="audio/mpeg">
                         Your browser does not support the audio element.
                     </audio>
                 </div>
             </div>
-            
-            <!-- Poetry pages viewer -->
-            <div class="poetry-container">
-                <div class="poetry-pages">
-                    <!-- Poetry pages - Replace src attributes with your actual image paths -->
-                    <div class="poetry-page active">
-                        <img src="Content/r1.png" alt="Ruri Page 1" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r2.png" alt="Ruri Page 2" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r3.png" alt="Ruri Page 3" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r4.png" alt="Ruri Page 4" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r5.png" alt="Ruri Page 5" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r6.png" alt="Ruri Page 6" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r7.png" alt="Ruri Page 7" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r8.png" alt="Ruri Page 8" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                    <div class="poetry-page">
-                        <img src="Content/r9.png0" alt="Ruri Page 9" class="page-img">
-                        <div class="zoom-icon"><i class="fas fa-search-plus"></i></div>
-                    </div>
-                </div>
-                
-            
-                <div class="panel-counter" id="pageCounter">Page 1 of 5</div>
-                <div class="nav-buttons">
-                    <button class="nav-button" id="prevButton" disabled>Previous</button>
-                    <button class="nav-button" id="nextButton">Next</button>
-                </div>
-            </div>
         </div>
     </div>
-    
-    <div class="footer">
-        <img class="footer-logo" src="qia-logo.png" alt="QIA Logo">
-        <a href="https://qiarchive.org/en/">Queer Indonesia Archive</a>
-    </div>
-    
-    <!-- Lightbox modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div id="lightbox-caption" class="lightbox-caption"></div>
-        <div class="zoom-controls">
-            <span class="zoom-btn" id="zoom-out"><i class="fas fa-search-minus"></i></span>
-            <span class="zoom-btn" id="reset-zoom"><i class="fas fa-compress"></i></span>
-            <span class="zoom-btn" id="zoom-in"><i class="fas fa-search-plus"></i></span>
-        </div>
-    </div>
-    
-    <script>
-        // Script to handle page navigation and lightbox functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            // Page navigation variables
-            const pages = document.querySelectorAll('.poetry-page');
-            const prevButton = document.getElementById('prevButton');
-            const nextButton = document.getElementById('nextButton');
-            const pageCounter = document.getElementById('pageCounter');
-            let currentPage = 0;
-            
-            // Lightbox variables
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            const lightboxCaption = document.getElementById('lightbox-caption');
-            const closeLightbox = document.querySelector('.close-lightbox');
-            const zoomIcons = document.querySelectorAll('.zoom-icon');
-            const zoomIn = document.getElementById('zoom-in');
-            const zoomOut = document.getElementById('zoom-out');
-            const resetZoom = document.getElementById('reset-zoom');
-            let currentZoom = 1;
-            
-            // Update page counter
-            function updateCounter() {
-                pageCounter.textContent = `Page ${currentPage + 1} of ${pages.length}`;
-            }
-            
-            // Show current page and hide others
-            function showPage(index) {
-                pages.forEach((page, i) => {
-                    if (i === index) {
-                        page.classList.add('active');
-                    } else {
-                        page.classList.remove('active');
-                    }
-                });
-                
-                // Update button states
-                prevButton.disabled = index === 0;
-                nextButton.disabled = index === pages.length - 1;
-                
-                // Update counter
-                currentPage = index;
-                updateCounter();
-            }
-            
-            // Event listeners for navigation buttons
-            prevButton.addEventListener('click', function() {
-                if (currentPage > 0) {
-                    showPage(currentPage - 1);
-                }
-            });
-            
-            nextButton.addEventListener('click', function() {
-                if (currentPage < pages.length - 1) {
-                    showPage(currentPage + 1);
-                }
-            });
-            
-            // Lightbox functionality
-            // Open lightbox
-            zoomIcons.forEach((icon, index) => {
-                icon.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const img = pages[index].querySelector('img');
-                    lightboxImg.src = img.src;
-                    lightboxCaption.textContent = `Poetry Page ${index + 1}`;
-                    lightbox.style.display = 'block';
-                    currentZoom = 1;
-                    updateZoom();
-                    
-                    // Prevent body scrolling when lightbox is open
-                    document.body.style.overflow = 'hidden';
-                });
-            });
-            
-            // Close lightbox
-            closeLightbox.addEventListener('click', function() {
-                lightbox.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            });
-            
-            // Close lightbox with escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && lightbox.style.display === 'block') {
-                    lightbox.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Click outside to close
-            lightbox.addEventListener('click', function(e) {
-                if (e.target === lightbox) {
-                    lightbox.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }
-            });
-            
-            // Zoom controls
-            function updateZoom() {
-                lightboxImg.style.transform = `scale(${currentZoom})`;
-            }
-            
-            zoomIn.addEventListener('click', function() {
-                currentZoom += 0.25;
-                if (currentZoom > 3) currentZoom = 3; // Limit max zoom
-                updateZoom();
-            });
-            
-            zoomOut.addEventListener('click', function() {
-                currentZoom -= 0.25;
-                if (currentZoom < 0.5) currentZoom = 0.5; // Limit min zoom
-                updateZoom();
-            });
-            
-            resetZoom.addEventListener('click', function() {
-                currentZoom = 1;
-                updateZoom();
-            });
-            
-            // Use mousewheel to zoom
-            lightbox.addEventListener('wheel', function(e) {
-                e.preventDefault();
-                if (e.deltaY < 0) {
-                    // Scroll up, zoom in
-                    currentZoom += 0.1;
-                    if (currentZoom > 3) currentZoom = 3;
-                } else {
-                    // Scroll down, zoom out
-                    currentZoom -= 0.1;
-                    if (currentZoom < 0.5) currentZoom = 0.5;
-                }
-                updateZoom();
-            });
-            
-            // Initialize page display
-            showPage(0);
-        });
-    </script>
 </body>
 </html>

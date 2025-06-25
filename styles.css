@@ -17,8 +17,7 @@
     --artist-color3: rgba(134, 124, 192, 0.15);
     --artist-border3: rgba(134, 124, 192, 0.3);
     
-    --footer-height: 40px;
-    --sidebar-width: 15%;
+    --sidebar-width: 5%;
 }
 
 /* Global styles and resets */
@@ -33,7 +32,6 @@ body {
     align-items: center;
     min-height: 100vh;
     overflow-x: hidden;
-    margin-bottom: var(--footer-height);
 }
 
 /* Hide scrollbars universally */
@@ -63,18 +61,23 @@ a:hover {
     min-height: 90vh;
     position: relative;
     align-items: flex-start;
-    margin-bottom: var(--footer-height);
 }
 
 /* Sidebar navigation */
 .sidebar {
     width: var(--sidebar-width);
     padding: 20px;
+    background-color: #f5f5f5;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .sidebar ul {
     list-style: none;
-    width: var(--sidebar-width);
+    width: 100%;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -86,8 +89,21 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.sidebar ul li:first-child {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin: 0;
+}
+
+.sidebar-logo {
+    width: 45px;
+    height: auto;
+}
+
 .sidebar ul li a {
     font-size: 16px;
+    color: #43438E;
 }
 
 /* Main content areas */
@@ -99,7 +115,7 @@ a:hover {
     justify-content: center;
     height: 100vh;
     flex-shrink: 0;
-    margin-left: 5%;
+    margin-left: calc(var(--sidebar-width) + 5%);
 }
 
 .about-content {
@@ -110,6 +126,7 @@ a:hover {
     justify-content: center;
     height: 100vh;
     flex-shrink: 0;
+    margin-left: calc(var(--sidebar-width) + 5%);
 }
 
 /* Typography styles */
@@ -122,7 +139,13 @@ h1, .about-title {
 }
 
 .about-title {
-    font-size: 3.5em;
+    font-size: 4.5em !important;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    padding-left: 0;
+    color: var(--accent-color);
 }
 
 .subtitle {
@@ -169,6 +192,7 @@ h1, .about-title {
     flex-direction: column;
     height: 100vh;
     overflow-y: scroll;
+    margin-left: calc(var(--sidebar-width) + 5%);
 }
 
 .about-column {
@@ -181,39 +205,68 @@ h1, .about-title {
 }
 
 .essay-content {
-    margin-right: 5%;
-    color: #ffffffa3;
-}
-
-/* Content typography */
-.about-column p {
-    margin-bottom: 1rem;
-    font-size: 1.1em;
-    line-height: 1.5rem;
-    text-align: justify;
-    text-justify: inter-word;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll;
+    margin-left: calc(var(--sidebar-width) + 5%);
+    padding-top: 5vh;
 }
 
 .essay-content h1 { 
     font-size: 3.5rem; 
     color: var(--title-color);
+    margin-bottom: 1rem;
 }
 
-.essay-content h2 { 
-    font-size: 1.8rem;
+.essay-content .artist-name {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    opacity: 1;
 }
 
-.essay-content p { 
-    margin-bottom: 1rem; 
-    text-align: justify;
-    text-justify: inter-word;
-    line-height: 2rem;
-    font-size: 1.4rem;
+.essay-content .pdf-link {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 1;
+}
+
+.essay-content .pdf-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition-standard);
+}
+
+.essay-content .pdf-link a:hover {
+    color: var(--accent-hover);
 }
 
 .about-column h1 { 
     font-size: 3.5rem; 
     color: var(--title-color);
+}
+
+.essay-content .artist-name {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.essay-content .pdf-link {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.essay-content .pdf-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: var(--transition-standard);
+}
+
+.essay-content .pdf-link a:hover {
+    color: var(--accent-hover);
 }
 
 /* Works grid layout */
@@ -242,7 +295,33 @@ h1, .about-title {
     transition: var(--transition-standard);
     box-shadow: var(--box-shadow);
     overflow: hidden;
+        /* Background image properties */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+.artist-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--artist-color1);
+    opacity: 0.85; /* Adjust this value (0.7-0.9 works well) */
+    z-index: 1;
+    transition: var(--transition-standard);
+}
+.artist-item:hover::before {
+    opacity: 0.7; /* Show more image on hover */
+}
+
+/* Ensure text appears above overlay */
+.artist-item > * {
+    position: relative;
+    z-index: 2;
+}
+
 
 .artist-item:hover {
     transform: scale(1.03);
@@ -273,29 +352,21 @@ h1, .about-title {
 /* Artist item text styling */
 .artist-name {
     color: var(--accent-color);
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: 1.2rem;
     margin-bottom: 0.6em;
     position: relative;
-    padding-bottom: 0.5em;
 }
 
 .artist-name::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 2em;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
+    display: none;
 }
 
 .artist-item:hover .artist-name::after {
-    width: 3em;
+    display: none;
 }
 
 .artist-brief {
-    font-size: clamp(0.7rem, 1vw, 0.85rem);
+    font-size: 0.9rem;
     margin-bottom: 0.8em;
     line-height: 1.3;
     flex-grow: 1;
@@ -303,7 +374,7 @@ h1, .about-title {
 
 .artist-media {
     font-style: italic;
-    font-size: clamp(0.65rem, 0.8vw, 0.75rem);
+    font-size: 0.8rem;
     margin-top: auto;
     color: rgba(232, 232, 232, 0.8);
 }
@@ -319,16 +390,6 @@ h1, .about-title {
     border-radius: 50%;
     background-color: rgba(171, 110, 126, 0.1);
     z-index: -1;
-}
-.comic-column {
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Changed from center to flex-start for left alignment */
-    height: 100vh;
-
-    padding-left: 5%;
-    overflow-y: scroll;
 }
 
 /* Comic title styling - maintain left alignment */
@@ -469,40 +530,6 @@ h1, .about-title {
     margin-top: -10px;
 }
 
-/* Footer styles */
-.footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #ffffff;
-    height: var(--footer-height);
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    z-index: 9999;
-}
-
-.footer a {
-    color: #000000;
-    text-decoration: none;
-    font-family: "Space Grotesk", sans-serif;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-}
-
-.footer a:hover {
-    color: var(--accent-color);
-}
-
-.footer-logo {
-    height: 40px;
-    width: auto;
-    margin-right: 10px;
-}
-
 /* Responsive breakpoints */
 @media (min-width: 1200px) {
     .uniform-grid {
@@ -536,12 +563,12 @@ h1, .about-title {
 /* Updated mobile breakpoint for vertical flow */
 @media (max-width: 768px) {
     :root {
-        --footer-height: 50px;
+        --sidebar-width: 5%;
     }
     
     body {
-        display: block; /* Change from flex to ensure no centering */
-        padding-top: 60px; /* Add space for fixed menu */
+        display: block;
+        padding-top: 60px;
     }
     
     .container {
@@ -549,7 +576,7 @@ h1, .about-title {
         align-items: center;
         width: 100%;
         overflow-x: hidden;
-        margin-bottom: calc(var(--footer-height) + 20px);
+        margin-bottom: 20px;
     }
     
     /* Fix sidebar to top of screen */
@@ -558,22 +585,47 @@ h1, .about-title {
         top: 0;
         left: 0;
         width: 100%;
-        padding: 10px 0;
-        background-color: var(--primary-bg);
+        height: 60px;
+        padding: 0 20px;
+        background-color: #f5f5f5;
         z-index: 100;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
     }
     
     .sidebar ul {
         width: 100%;
         flex-direction: row;
         justify-content: center;
-        height: auto;
-        margin: 10px 0;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: flex;
+        align-items: center;
     }
     
     .sidebar ul li {
         margin: 0 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .sidebar ul li:first-child {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .sidebar-logo {
+        width: 30px;
+        height: auto;
     }
     
     /* Stack content vertically */
@@ -615,8 +667,9 @@ h1, .about-title {
     .uniform-grid {
         grid-template-columns: 1fr;
         width: 90%;
-        padding-left: 0;
+        padding: 0;
         margin: 20px auto;
+        gap: 15px;
     }
     
     /* Comic specific adjustments */
@@ -642,6 +695,27 @@ h1, .about-title {
     /* Hide animation container on mobile */
     #animation-container {
         display: none;
+    }
+
+    .artist-item {
+        aspect-ratio: auto;
+        min-height: 120px;
+        padding: 15px;
+    }
+
+    .artist-name {
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    .artist-brief {
+        font-size: 1em;
+        line-height: 1.4;
+        margin-bottom: 0.5em;
+    }
+
+    .artist-media {
+        font-size: 0.9em;
     }
 }
 
@@ -687,19 +761,6 @@ h1, .about-title {
     
     .panel-counter {
         font-size: 12px;
-    }
-    
-    .footer {
-        height: auto;
-        padding: 5px 0;
-    }
-    
-    .footer a {
-        font-size: 0.9em;
-    }
-    
-    .footer-logo {
-        height: 30px;
     }
     
     .essay-content h1 {
