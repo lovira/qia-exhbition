@@ -15,10 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'about.html':
             markdownFile = 'Content/about.md';
             break;
-        // Add more cases for additional pages
-        // case 'artist2.html':
-        //     markdownFile = 'Content/essay2.md';
-        //     break;
+
         default:
             return; // Exit if no matching page
     }
