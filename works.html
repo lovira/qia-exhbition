@@ -8,20 +8,121 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@300..700&display=swap');
+
+        /* Mobile-specific styles for the back arrow in header */
+        @media (max-width: 768px) {
+            .sidebar .back-link {
+                position: absolute;
+                left: 60px; /* Position after the logo */
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+                padding: 5px 10px;
+                background-color: rgba(67, 67, 142, 0.9);
+                border-radius: 5px;
+                z-index: 1001;
+            }
+
+            .sidebar .back-link span {
+                color: #ffffff;
+                font-size: 0.9em;
+            }
+
+            .sidebar .back-link:hover {
+                background-color: rgba(67, 67, 142, 1);
+            }
+
+            /* Hide the original return arrow on mobile */
+            .about-content .arrow-back {
+                display: none;
+            }
+
+            /* Mobile-specific styles for about-title */
+            .about-content {
+                padding: 20px;
+                margin-top: 60px;
+                text-align: left;
+                width: 100%;
+            }
+
+            .about-title {
+                font-size: 4.5em;
+                line-height: 1.2;
+                margin-bottom: 15px;
+                letter-spacing: -0.02em;
+                text-align: left;
+                padding-left: 0;
+            }
+
+            .about-title br {
+                display: block;
+                content: "";
+                margin: 0.2em 0;
+            }
+
+            .subtitle {
+                font-size: 1.1em;
+                margin-bottom: 20px;
+                text-align: left;
+            }
+
+            /* Mobile styles for works grid */
+            .uniform-grid {
+                grid-template-columns: 1fr;
+                width: 90%;
+                padding: 0;
+                margin: 20px auto;
+                gap: 15px;
+            }
+
+            .artist-item {
+                aspect-ratio: auto;
+                min-height: 120px;
+                padding: 15px;
+            }
+
+            .artist-name {
+                font-size: 1.2em;
+                margin-bottom: 0.5em;
+            }
+
+            .artist-brief {
+                font-size: 1em;
+                line-height: 1.4;
+                margin-bottom: 0.5em;
+            }
+
+            .artist-media {
+                font-size: 0.9em;
+            }
+        }
+
+        .about-title {
+            font-size: 4.5em;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            padding-left: 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <nav class="sidebar">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="https://qiarchive.org/"><img class="sidebar-logo" src="qia-logo-clear.png" alt="QIA Logo"></a></li>
+                <li><a href="index2.html" class="back-link arrow-back">
+                    <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
+                </a></li>
+                <li><a href="index2.html">Home</a></li>
                 <li><a href="works.html">Works</a></li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
     
         <div class="about-content">
-            <h2 class="about-title">re/<br>directing<br>abundance</h2>
+            <h1 class="about-title">re/<br>directing<br>abundance</h1>
             <p class="subtitle"><i>a qiarchive exhibition</i></p>
             <a href="index.html" class="arrow-back">
                 <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
@@ -31,56 +132,48 @@
         <div class="works-column">
             <div class="uniform-grid">
           
-                <div class="circle-decoration circle-1"></div>
-                <div class="circle-decoration circle-2"></div>
-                <div class="circle-decoration circle-3"></div>
-                
-                <div class="artist-item">
-                    <h3 class="artist-name">Qih</h3>
-                    <p class="artist-brief"><a href="Artist1.html">Menelusuri Narasi Queer dan Muslim di Masa Orde Baru</a></p>
-                    <p class="artist-media">Essay</p>
+      
+                <div class="artist-item" style="background-image: url('Qih.png');">
+    <h3 class="artist-name">Qih</h3>
+                    <p class="artist-brief"><a href="Artist1.html">"Menelusuri Narasi Queer dan Muslim di Masa Orde Baru"</a>
+                    <br><i>Essay </i></br></p>
+
                 </div>
                 
-                <div class="artist-item">
+                <div class="artist-item" style="background-image: url('Devintri.jpg');">
                     <h3 class="artist-name">Devintri</h3>
-                    <p class="artist-brief"><a href="devintri.html">Puisi Wadam</a></p>
-                    <p class="artist-media">Video</p>
+                    <p class="artist-brief"><a href="devintri.html">"Puisi Wadam"</a>
+                    <br><i>Video </i></br></p>
+
                 </div>
                 
-                <div class="artist-item">
+                <div class="artist-item" style="background-image: url('Ruri.png');">
                     <h3 class="artist-name">Ruri</h3>
-                    <p class="artist-brief"><a href="ruri2.html">selamat pagi, sobs</a></p>
-                    <p class="artist-media">Poetry, Audio</p>
+                    <p class="artist-brief"><a href="ruri2.html">"selamat pagi, sobs"</a>
+                    <br><i>Poetry, Audio </i></br></p>
+          
                 </div>
                 
-                <div class="artist-item">
+                <div class="artist-item" style="background-image: url('Hans1.jpg');">
                     <h3 class="artist-name">Hans</h3>
                     <p class="artist-brief">
-                        > <a href="hans.html">Heteronormatif dalam Hubungan Lesbian</a><br>
-                        > <a href="hans2.html">Trans La La</a>
-                    </p>
-                    <p class="artist-media">Narrative Illustration</p>
+                        > <a href="hans.html">"Heteronormatif dalam Hubungan Lesbian"</a><br>
+                        > <a href="hans2.html">"Trans La La"</a>
+                  
+                     <br><i>Narrative Illustration </i></br></p>
                 </div>
-                
-                <div class="artist-item">
+
+                <div class="artist-item" style="background-image: url('Ajeng.jpg');">
                     <h3 class="artist-name">Ajeng</h3>
-                    <p class="artist-brief"><a href="#">Judul Karya</a></p>
-                    <p class="artist-media">Media</p>
+                    <p class="artist-brief"><a href="#">Judul Karya</a> <br><i>Essay </i></br></p>
                 </div>
 
                 <div class="artist-item">
                     <h3 class="artist-name">ZINE</h3>
-                    <p class="artist-brief"><a href="#">Judul Karya</a></p>
-                    <p class="artist-media">Media</p>
+                    <p class="artist-brief"><a href="#">Judul Karya</a> <br><i>Zine </i></br></p>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="footer">
-        <!-- Reserved space for future logo -->
-        <img class="footer-logo" src="qia-logo.png" alt="QIA Logo"> 
-        <a href="https://qiarchive.org/en/">Queer Indonesia Archive</a>
     </div>
 </body>
 </html>

@@ -101,6 +101,43 @@
 
         } */
         
+        /* Mobile-specific styles for the back arrow in header */
+        @media (max-width: 768px) {
+            .sidebar .back-link {
+                position: absolute;
+                left: 60px; /* Position after the logo */
+                top: 50%;
+                transform: translateY(-50%);
+                margin: 0;
+                padding: 5px 10px;
+                background-color: rgba(67, 67, 142, 0.9);
+                border-radius: 5px;
+                z-index: 1001;
+            }
+
+            .sidebar .back-link span {
+                color: #ffffff;
+                font-size: 0.9em;
+            }
+
+            .sidebar .back-link:hover {
+                background-color: rgba(67, 67, 142, 1);
+            }
+
+            /* Hide the original return arrow on mobile */
+            .about-content .arrow-back {
+                display: none;
+            }
+        }
+
+        .about-title {
+            font-size: 4.5em !important;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            padding-left: 0;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
 </head>
@@ -108,21 +145,28 @@
     <div class="container">
         <nav class="sidebar">
             <ul>
-                <li><a href="index.html">Home</a></li>
+                <li><a href="https://qiarchive.org/"><img class="sidebar-logo" src="qia-logo-clear.png" alt="QIA Logo"></a></li>
+                <li><a href="works.html" class="back-link arrow-back">
+                    <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
+                </a></li>
+                <li><a href="index2.html">Home</a></li>
                 <li><a href="works.html">Works</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="https://qiarchive.org/en/">QIA</a></li>
             </ul>
         </nav>
     
         <div class="about-content">
             <h2 class="about-title">re/<br>directing<br>abundance</h2>
             <p class="subtitle"><i>a qiarchive exhibition</i></p>
+            <a href="works.html" class="arrow-back">
+                <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
+            </a>  
         </div>
     
         <div class="comic-content">
             <div class="comic-viewer">
                 <h1 class="comic-title">Heteronormatif dalam Hubungan Lesbian</h1>
+                <p class="artist-name">Artist name: [Artist2]</p>
                 
                 <div class="comic-panels">
                     <!-- Comic panels - Replace src attributes with your actual image paths -->

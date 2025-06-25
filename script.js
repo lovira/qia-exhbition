@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the current page filename
     const currentPage = window.location.pathname.split('/').pop();
     
-
     const contentContainer = document.getElementById('essay-container') || document.getElementById('about-content-container');
     
     if (!contentContainer) return;
@@ -16,10 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'about.html':
             markdownFile = 'Content/about.md';
             break;
-        // Add more cases for additional pages
-        // case 'artist2.html':
-        //     markdownFile = 'Content/essay2.md';
-        //     break;
+
         default:
             return; // Exit if no matching page
     }
@@ -32,11 +28,29 @@ document.addEventListener('DOMContentLoaded', function() {
             return response.text();
         })
         .then(markdown => {
-            const htmlContent = marked.parse(markdown);
-            contentContainer.innerHTML = htmlContent;
+            // For essay pages, load content into essay-body div
+            if (currentPage === 'Artist1.html') {
+                const essayBody = contentContainer.querySelector('.essay-body');
+                if (essayBody) {
+                    // Remove the title from markdown since it's already in the HTML
+                    const markdownWithoutTitle = markdown.replace(/^# .*\n/, '');
+                    essayBody.innerHTML = marked.parse(markdownWithoutTitle);
+                }
+            } else {
+                // For other pages, load content as before
+                contentContainer.innerHTML = marked.parse(markdown);
+            }
         })
         .catch(error => {
             console.error('Error:', error);
-            contentContainer.innerHTML = `<p>Error loading content: ${error.message}</p>`;
+            const errorMessage = `<p>Error loading content: ${error.message}</p>`;
+            if (currentPage === 'Artist1.html') {
+                const essayBody = contentContainer.querySelector('.essay-body');
+                if (essayBody) {
+                    essayBody.innerHTML = errorMessage;
+                }
+            } else {
+                contentContainer.innerHTML = errorMessage;
+            }
         });
 });
