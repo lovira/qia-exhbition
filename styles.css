@@ -213,7 +213,7 @@ h1, .about-title {
     margin-left: calc(var(--sidebar-width) + 5%);
     padding-top: 5vh;
     padding-right: 5vh;
-    text-align: justify;      
+    text-align: justify;        /* This line makes the text justified */
     text-justify: inter-word; 
     
 }
@@ -547,7 +547,8 @@ h1, .about-title {
     }
     
     .about-title {
-        font-size: 3em;
+        font-size:3em;
+       margin-right: 10%
     }
     
     .content, .about-content {
@@ -743,6 +744,7 @@ h1, .about-title {
     
     .about-title {
         font-size: 2em;
+        margin-right: 10%
     }
     
     .subtitle {
