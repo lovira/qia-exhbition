@@ -1,7 +1,7 @@
 /* CSS Variables for consistent colors and values */
 :root {
     --primary-bg: #43438E;
-    --primary-text: #e8e8e8d3;
+    --primary-text: #e8e8e8e0;
     --accent-color: #AB6E7E;
     --accent-light: rgba(171, 110, 126, 0.3);
     --accent-medium: rgba(171, 110, 126, 0.5);
