@@ -350,6 +350,7 @@ opacity: 0.7; /* 70% visible */
     font-weight: 500 !important;
     margin-bottom: 8px !important;
     line-height: 1.4 !important;
+    font-size: 75%;
 }
 
 .artist-media {
