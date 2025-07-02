@@ -28,58 +28,6 @@
             }
         }
 
-        /* Mobile-specific styles for the back arrow in header */
-        @media (max-width: 768px) {
-            .sidebar .back-link {
-                display: none; /* Hide the return arrow on mobile */
-            }
-
-            .sidebar .back-link span {
-                color: #ffffff;
-                font-size: 0.9em;
-            }
-
-            .sidebar .back-link:hover {
-                background-color: rgba(67, 67, 142, 1);
-            }
-
-            /* Hide the original return arrow on mobile */
-            .about-content .arrow-back {
-                display: none;
-            }
-
-            /* Mobile-specific styles for about-title */
-            .about-content {
-                padding: 20px;
-                margin-top: 60px;
-                text-align: left;
-                width: 100%;
-            }
-
-            .about-title {
-                font-size: 4.5em;
-                line-height: 1.2;
-                margin-bottom: 15px;
-                letter-spacing: -0.02em;
-                text-align: left;
-                padding-left: 0;
-            }
-
-            .about-title br {
-                display: block;
-                content: "";
-                margin: 0.2em 0;
-            }
-
-            .subtitle {
-                font-size: 1.1em;
-                margin-bottom: 20px;
-                text-align: left;
-            }
-
-
-
-        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
 </head>
@@ -88,9 +36,6 @@
         <nav class="sidebar">
             <ul>
                 <li><a href="https://qiarchive.org/"><img class="sidebar-logo" src="qia-logo-clear.png" alt="QIA Logo"></a></li>
-                <li><a href="index.html" class="back-link arrow-back">
-                    <span class="arrow"></span><span>r</span><span>e</span><span>/</span><span>t</span><span>u</span><span>r</span><span>n</span>
-                </a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="works.html">Works</a></li>
                 <li><a href="about.html">About</a></li>
