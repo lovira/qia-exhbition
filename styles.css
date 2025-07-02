@@ -833,3 +833,37 @@ opacity: 0.7; /* 70% visible */
         max-width: 90px;
     }
 }
+.return-button {
+    display: none;
+}
+
+/* Show the return button only on mobile/tablet (when sidebar is horizontal) */
+@media (max-width: 768px) {
+    .return-button {
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Style for the return button on mobile */
+    .return-button a {
+        color: #AB6E7E !important;
+        font-weight: 600 !important;
+        padding: 3px 6px;
+        border-radius: 4px;
+        background: rgba(171, 110, 126, 0.1);
+        transition: all 0.3s ease;
+        font-size: 12px !important;
+    }
+    
+    .return-button a:hover {
+        color: #8d5966 !important;
+        background: rgba(171, 110, 126, 0.2);
+    }
+}
+
+@media (max-width: 480px) {
+    .return-button a {
+        font-size: 11px !important;
+        padding: 2px 4px;
+    }
+}

@@ -4,7 +4,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const contentContainer = document.getElementById('essay-container') || document.getElementById('about-content-container');
     
-    if (!contentContainer) return;
+    // Exit early if no container is found
+    if (!contentContainer) {
+        console.log('No content container found on this page');
+        return;
+    }
     
     let markdownFile;
     
@@ -15,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
         case 'about.html':
             markdownFile = 'Content/about.md';
             break;
-
         default:
+            console.log('No markdown file configured for this page');
             return; // Exit if no matching page
     }
     
@@ -35,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Remove the title from markdown since it's already in the HTML
                     const markdownWithoutTitle = markdown.replace(/^# .*\n/, '');
                     essayBody.innerHTML = marked.parse(markdownWithoutTitle);
+                } else {
+                    console.log('No essay-body found');
                 }
             } else {
                 // For other pages, load content as before
