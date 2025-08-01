@@ -46,15 +46,8 @@
         
         /* Audio player section */
         .audio-section {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             text-align: center;
-        }
-        
-        .audio-title-main {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: 500;
         }
         
         .audio-player {
@@ -105,17 +98,6 @@
             flex: 1;
             font-size: 1.1rem;
             font-weight: 400;
-        }
-        
-        .poem-timestamp {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-        
-        .poem-timestamp:hover {
-            color: var(--accent-color);
         }
         
         .expand-icon {
@@ -254,34 +236,10 @@
             .archive-image {
                 max-width: 100%;
             }
-        }
-
-        @media (max-width: 768px) {
+            
             .two-column-section {
                 flex-direction: column;
                 gap: 1rem;
-            }
-        }
-        /* Currently playing indicator */
-        .poem-header.playing {
-            color: var(--accent-color);
-            background: rgba(171, 110, 126, 0.05);
-        }
-        
-        .poem-header.playing .poem-number::before {
-            content: "♪ ";
-            animation: pulse 1.5s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        /* Mobile adjustments */
-        @media (max-width: 768px) {
-            .audio-title-main {
-                font-size: 1.5rem;
             }
             
             .poem-header {
@@ -291,10 +249,6 @@
             
             .poem-title {
                 font-size: 1rem;
-            }
-            
-            .poem-timestamp {
-                font-size: 0.8rem;
             }
             
             .poem-content {
@@ -311,14 +265,6 @@
             .poem-header {
                 flex-wrap: wrap;
                 gap: 0.5rem;
-            }
-            
-            .poem-timestamp {
-                order: 1;
-                width: 100%;
-                text-align: left;
-                margin-left: 30px;
-                font-size: 0.75rem;
             }
             
             .poem-content {
@@ -357,26 +303,25 @@
             
             <div class="essay-body">
                 <div class="poems-container">
-                    <!-- Audio Player Section -->
-                    <div class="audio-section">
-                        <div class="audio-player">
-                            <audio controls>
-                                <source src="Content/ruri-audio.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </div>
-                    </div>
-                    
                     <!-- Poem Tracklist -->
                     <div class="poem-tracklist">
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="0">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">01.</span>
                                 <span class="poem-title">selamat pagi, sobs</span>
-                                <span class="poem-timestamp" onclick="seekAudio(0)">[0:00 - 2:30]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
+                                <!-- Audio Player inside first poem -->
+                                <div class="audio-section">
+                                    <div class="audio-player">
+                                        <audio controls>
+                                            <source src="Content/ruri-audio.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                </div>
+                                
                                 <div class="poem-text">
                                     <div class="poem-line" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 1.5rem;">selamat pagi, sobs!</div>
                                     
@@ -430,10 +375,9 @@
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="150">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">02.</span>
                                 <span class="poem-title">hari ini, 2040</span>
-                                <span class="poem-timestamp" onclick="seekAudio(150)">[2:31 - 5:15]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
@@ -478,10 +422,9 @@
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="315">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">03.</span>
                                 <span class="poem-title">dari pony ke pink pony club</span>
-                                <span class="poem-timestamp" onclick="seekAudio(315)">[5:16 - 7:45]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
@@ -498,10 +441,9 @@
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="465">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">04.</span>
                                 <span class="poem-title">kamar bpjs kelas 3 with view</span>
-                                <span class="poem-timestamp" onclick="seekAudio(465)">[7:46 - 10:20]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
@@ -573,10 +515,9 @@
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="620">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">05.</span>
                                 <span class="poem-title">share lok</span>
-                                <span class="poem-timestamp" onclick="seekAudio(620)">[10:21 - 12:00]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
@@ -585,12 +526,12 @@
                                     <div class="poem-line spaced">[puisi temuan dari arsip QIA]</div>
                                     
                                     <div class="archive-image-container">
-                                        <img src="Content/ruri-1.png" class="archive-image">
+                                        <img src="Content/ruri-1.png" alt="Archive document page 1" class="archive-image">
                                         <p class="image-caption">sumber: Queer Indonesia Archive</p>
                                     </div>
 
                                     <div class="archive-image-container">
-                                        <img src="Content/ruri-2.png"  class="archive-image">
+                                        <img src="Content/ruri-2.png" alt="Archive document page 2" class="archive-image">
                                     </div>
 
                                     
@@ -604,8 +545,6 @@
     </div>
     
     <script>
-        const audio = document.querySelector('audio');
-        
         function togglePoem(header) {
             const item = header.parentElement;
             const isExpanded = item.classList.contains('expanded');
@@ -619,39 +558,6 @@
             
             // Toggle current poem
             item.classList.toggle('expanded');
-        }
-        
-        function seekAudio(seconds) {
-            if (audio) {
-                audio.currentTime = seconds;
-                audio.play();
-            }
-        }
-        
-        // Show currently playing poem
-        if (audio) {
-            audio.addEventListener('timeupdate', function() {
-                const currentTime = audio.currentTime;
-                const headers = document.querySelectorAll('.poem-header');
-                
-                headers.forEach(header => {
-                    header.classList.remove('playing');
-                });
-                
-                // Highlight current poem based on time
-                // Adjust these timestamps to match your actual audio
-                if (currentTime < 150) {         // 0:00 - 2:30
-                    headers[0].classList.add('playing');
-                } else if (currentTime < 315) {  // 2:31 - 5:15
-                    headers[1].classList.add('playing');
-                } else if (currentTime < 465) {  // 5:16 - 7:45
-                    headers[2].classList.add('playing');
-                } else if (currentTime < 620) {  // 7:46 - 10:20
-                    headers[3].classList.add('playing');
-                } else {                         // 10:21 - 12:00
-                    headers[4].classList.add('playing');
-                }
-            });
         }
     </script>
 </body>
