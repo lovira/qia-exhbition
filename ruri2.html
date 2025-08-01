@@ -46,15 +46,8 @@
         
         /* Audio player section */
         .audio-section {
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             text-align: center;
-        }
-        
-        .audio-title-main {
-            font-size: 2rem;
-            color: var(--accent-color);
-            margin-bottom: 1rem;
-            font-weight: 500;
         }
         
         .audio-player {
@@ -105,17 +98,6 @@
             flex: 1;
             font-size: 1.1rem;
             font-weight: 400;
-        }
-        
-        .poem-timestamp {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
-        
-        .poem-timestamp:hover {
-            color: var(--accent-color);
         }
         
         .expand-icon {
@@ -173,26 +155,91 @@
             color: #AB6E7E; /* Your accent color */
             padding-left: 1rem;
         }
-        /* Currently playing indicator */
-        .poem-header.playing {
-            color: var(--accent-color);
-            background: rgba(171, 110, 126, 0.05);
+
+        .poem-title-large {
+            font-weight: 600; 
+            font-size: 1.2rem; 
+            margin-bottom: 1.5rem;
+        }
+
+        .two-column-section {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .left-column {
+            flex: 1;
+        }
+
+        .right-column {
+            flex: 1;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bullet-list li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .bullet-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-text);
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .conclusion {
+            font-weight: 600;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .poem-header.playing .poem-number::before {
-            content: "♪ ";
-            animation: pulse 1.5s infinite;
+        .archive-image-container {
+            margin: 2rem 0;
+            text-align: center;
         }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+
+        .archive-image {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
         }
-        
-        /* Mobile adjustments */
+
+        .archive-image:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
         @media (max-width: 768px) {
-            .audio-title-main {
-                font-size: 1.5rem;
+            .archive-image {
+                max-width: 100%;
+            }
+            
+            .two-column-section {
+                flex-direction: column;
+                gap: 1rem;
             }
             
             .poem-header {
@@ -202,10 +249,6 @@
             
             .poem-title {
                 font-size: 1rem;
-            }
-            
-            .poem-timestamp {
-                font-size: 0.8rem;
             }
             
             .poem-content {
@@ -224,18 +267,11 @@
                 gap: 0.5rem;
             }
             
-            .poem-timestamp {
-                order: 1;
-                width: 100%;
-                text-align: left;
-                margin-left: 30px;
-                font-size: 0.75rem;
-            }
-            
             .poem-content {
                 padding-left: 1rem;
             }
         }
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
 </head>
@@ -267,26 +303,25 @@
             
             <div class="essay-body">
                 <div class="poems-container">
-                    <!-- Audio Player Section -->
-                    <div class="audio-section">
-                        <div class="audio-player">
-                            <audio controls>
-                                <source src="Content/ruri-audio.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </div>
-                    </div>
-                    
                     <!-- Poem Tracklist -->
                     <div class="poem-tracklist">
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="0">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">01.</span>
                                 <span class="poem-title">selamat pagi, sobs</span>
-                                <span class="poem-timestamp" onclick="seekAudio(0)">[0:00 - 2:30]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
+                                <!-- Audio Player inside first poem -->
+                                <div class="audio-section">
+                                    <div class="audio-player">
+                                        <audio controls>
+                                            <source src="Content/ruri-audio.mp3" type="audio/mpeg">
+                                            Your browser does not support the audio element.
+                                        </audio>
+                                    </div>
+                                </div>
+                                
                                 <div class="poem-text">
                                     <div class="poem-line" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 1.5rem;">selamat pagi, sobs!</div>
                                     
@@ -340,10 +375,9 @@
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="150">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">02.</span>
                                 <span class="poem-title">hari ini, 2040</span>
-                                <span class="poem-timestamp" onclick="seekAudio(150)">[2:31 - 5:15]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
@@ -379,19 +413,18 @@
                                 <div class="poem-line">ririn terpejam merekam peristiwa ini. very mindful.</div>
                                 <div class="poem-line spaced">meu, kuji, hibi, rat, tomat, dan ririn berjumpa di pembelokan dan saling berkenalan.</div>
 
-<div class="poem-line spaced">meu ditetapkan sebagai budak laki-laki, namun dia ingin dikenal sebagai ahli botani. kuji mengatakan dirinya spirit leluhur kita semua yang hobi jadi disjoki. hibi mengidentifikasi diri sebagai INFJ. rat menggambarkan diri dengan bahasa isyarat: umurku lima tahun, aku-suka-unicorn, ini kaos abu-abu favoritku dan menunjuk gambar tengkorak dan tulang silang di paha kanan celana pendek favoritnya. tomat menggunakan semua kata ganti untuk tomat. ririn yang mengingatkan kita pada widy vierra menulis di bionya: transpuan, ilustrator, dan sebuah bendera palestina.</div>
+                                <div class="poem-line spaced">meu ditetapkan sebagai budak laki-laki, namun dia ingin dikenal sebagai ahli botani. kuji mengatakan dirinya spirit leluhur kita semua yang hobi jadi disjoki. hibi mengidentifikasi diri sebagai INFJ. rat menggambarkan diri dengan bahasa isyarat: umurku lima tahun, aku-suka-unicorn, ini kaos abu-abu favoritku dan menunjuk gambar tengkorak dan tulang silang di paha kanan celana pendek favoritnya. tomat menggunakan semua kata ganti untuk tomat. ririn yang mengingatkan kita pada widy vierra menulis di bionya: transpuan, ilustrator, dan sebuah bendera palestina.</div>
 
-<div class="poem-line">berenam mereka melanjutkan perjalanan. tanda silang di peta mengarah ke timur-selatan. sepanjang jalan mereka selingi dengan cerita lisan dari hal acak sederhana sampai terapi seni sebagai mekanisme kopasi.</div>
-                            </div>
+                                <div class="poem-line">berenam mereka melanjutkan perjalanan. tanda silang di peta mengarah ke timur-selatan. sepanjang jalan mereka selingi dengan cerita lisan dari hal acak sederhana sampai terapi seni sebagai mekanisme kopasi.</div>
+                             
 
                             </div>
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="315">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">03.</span>
                                 <span class="poem-title">dari pony ke pink pony club</span>
-                                <span class="poem-timestamp" onclick="seekAudio(315)">[5:16 - 7:45]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
@@ -408,31 +441,100 @@
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="465">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">04.</span>
                                 <span class="poem-title">kamar bpjs kelas 3 with view</span>
-                                <span class="poem-timestamp" onclick="seekAudio(465)">[7:46 - 10:20]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
-                                <div class="poem-text">
-                                    <div class="poem-line" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 1.5rem;">[Poem Title 4]</div>
-                                    <div class="poem-line">Fourth poem content...</div>
+                            <div class="poem-text">
+                                <div class="poem-line poem-title-large">kamar bpjs kelas 3 with view</div>
+                                
+                                <div class="two-column-section">
+                                    <div class="left-column">
+                                        <div class="poem-line small-gap">berjalan xray dengan gontai.</div>
+                                        <div class="poem-line spaced">berjalan xray ke bilik admisi.</div>
+                                        
+                                        <div class="poem-line small-gap">petugas bilang, "kamar 303,</div>
+                                        <div class="poem-line small-gap">enam kasur, fasilitas kipas</div>
+                                        <div class="poem-line spaced">angin."</div>
+                                        
+                                        <div class="poem-line small-gap">xray naik lift kemudian.</div>
+                                        <div class="poem-line small-gap">xray mendapat ranjang di</div>
+                                        <div class="poem-line spaced">tepian.</div>
+                                        
+                                        <div class="poem-line small-gap quote-text">"not bad lah. kamar kelas 3,</div>
+                                        <div class="poem-line spaced quote-text">enam kasur..."</div>
+                                        
+                                        <div class="poem-line small-gap quote-text">"apa tadi katanya? fasilitas</div>
+                                        <div class="poem-line small-gap quote-text">kipas angin? berarti ini bonus</div>
+                                        <div class="poem-line small-gap quote-text">pemandangan luar jendela.</div>
+                                        <div class="poem-line small-gap quote-text">ha-ha-ha sebuah selera</div>
+                                        <div class="poem-line spaced quote-text">humor."</div>
+                                        
+                                        <div class="poem-line spaced">xray memotret jendela.</div>
+                                        
+                                        <div class="poem-line small-gap">di waktu lain, di depan jendela</div>
+                                        <div class="poem-line small-gap">kamarnya, xray menulis</div>
+                                        <div class="poem-line small-gap">keinginannya untuk top</div>
+                                        <div class="poem-line spaced">surgery.</div>
+                                        
+                                        <div class="poem-line small-gap">xray meminta kakaknya</div>
+                                        <div class="poem-line small-gap">pulang karena waktunya</div>
+                                        <div class="poem-line small-gap">me-time.</div>
+                                        <div class="poem-line small-gap">gelang konser telah</div>
+                                        <div class="poem-line small-gap">terpasang.</div>
+                                        <div class="poem-line small-gap">early dinner pun datang.</div>
+                                        <div class="poem-line">first exp sbg pasien rawat inap.</div>
+                                    </div>
+                                    
+                                    <div class="right-column">
+                                        <ul class="bullet-list">
+                                            <li><span class="strikethrough">bilang ke dokter anestesi kau punya gangguan kecemasan kirim pesan ke rumah minta kirimkan baju ganti dan perlengkapan mandi</span></li>
+                                            <li><span class="strikethrough">air vit botol besar (5), pisang indomaret dan semangka</span></li>
+                                            <li>be mindful</li>
+                                            <li><span class="strikethrough">infus di tangan kiri karena benjolannya di kanan</span></li>
+                                            <li><span class="strikethrough">bangun pagi, mandi, dan keramas sesuai instruksi nurse, sarapan dan puasa</span></li>
+                                            <li><span class="strikethrough">operasi jam 4 sore. kemungkinan lebih cepat.</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
+                                
+                                <div class="poem-line conclusion">kesimpulan:</div>
+                                <div class="poem-line conclusion">FIBROADENOMA MAMMAE</div>
+                                <div class="poem-line conclusion spaced">DISERTAI COLUMNAR CELL LESION</div>
+                                
+                                <div class="poem-line small-gap">xray tidak paham di bagian</div>
+                                <div class="poem-line small-gap">penjelasan</div>
+                                <div class="poem-line small-gap">mikroskopik hasil labnya.</div>
+                                <div class="poem-line small-gap">yang dia tahu,</div>
+                                <div class="poem-line small-gap">tubuhnya punya selera</div>
+                                <div class="poem-line">humor.</div>
                             </div>
+                                                        </div>
                         </div>
                         
                         <div class="poem-item">
-                            <div class="poem-header" onclick="togglePoem(this)" data-timestamp="620">
+                            <div class="poem-header" onclick="togglePoem(this)">
                                 <span class="poem-number">05.</span>
                                 <span class="poem-title">share lok</span>
-                                <span class="poem-timestamp" onclick="seekAudio(620)">[10:21 - 12:00]</span>
                                 <span class="expand-icon">▼</span>
                             </div>
                             <div class="poem-content">
                                 <div class="poem-text">
-                                    <div class="poem-line" style="font-weight: 600; font-size: 1.2rem; margin-bottom: 1.5rem;">share lok</div>
-                                    <div class="poem-line">[puisi temuan dari arsip QIA]</div>
+                                    <div class="poem-line poem-title-large">share lok</div>
+                                    <div class="poem-line spaced">[puisi temuan dari arsip QIA]</div>
+                                    
+                                    <div class="archive-image-container">
+                                        <img src="Content/ruri-1.png" alt="Archive document page 1" class="archive-image">
+                                        <p class="image-caption">sumber: Queer Indonesia Archive</p>
+                                    </div>
+
+                                    <div class="archive-image-container">
+                                        <img src="Content/ruri-2.png" alt="Archive document page 2" class="archive-image">
+                                    </div>
+
+                                    
                                 </div>
                             </div>
                         </div>
@@ -443,8 +545,6 @@
     </div>
     
     <script>
-        const audio = document.querySelector('audio');
-        
         function togglePoem(header) {
             const item = header.parentElement;
             const isExpanded = item.classList.contains('expanded');
@@ -458,39 +558,6 @@
             
             // Toggle current poem
             item.classList.toggle('expanded');
-        }
-        
-        function seekAudio(seconds) {
-            if (audio) {
-                audio.currentTime = seconds;
-                audio.play();
-            }
-        }
-        
-        // Show currently playing poem
-        if (audio) {
-            audio.addEventListener('timeupdate', function() {
-                const currentTime = audio.currentTime;
-                const headers = document.querySelectorAll('.poem-header');
-                
-                headers.forEach(header => {
-                    header.classList.remove('playing');
-                });
-                
-                // Highlight current poem based on time
-                // Adjust these timestamps to match your actual audio
-                if (currentTime < 150) {         // 0:00 - 2:30
-                    headers[0].classList.add('playing');
-                } else if (currentTime < 315) {  // 2:31 - 5:15
-                    headers[1].classList.add('playing');
-                } else if (currentTime < 465) {  // 5:16 - 7:45
-                    headers[2].classList.add('playing');
-                } else if (currentTime < 620) {  // 7:46 - 10:20
-                    headers[3].classList.add('playing');
-                } else {                         // 10:21 - 12:00
-                    headers[4].classList.add('playing');
-                }
-            });
         }
     </script>
 </body>
