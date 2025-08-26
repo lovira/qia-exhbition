@@ -1,5 +1,3 @@
-# Kata Pengantar
-
 Beberapa tahun terakhir, karena terlanjur melakukan beragam praktik pengarsipan “queer”, 
 saya mulai banyak membaca tentang praktik-praktik pengarsipan queer dan kritik-kritik 
 yang menyertainya insert: thanks to teman-teman diskusi yang banyak memberi referensi maupun baca bersama. 
