@@ -512,7 +512,7 @@ opacity: 0.7; /* 70% visible */
 /* About page specific text styling */
 .about-text {
     width: 60% !important; /* Reduced from 65% to create more right margin */
-    padding-right: 8% !important; /* Add significant right padding */
+    padding-right: 20% !important; /* Add significant right padding */
     text-align: justify !important; /* Justify the text */
     text-justify: inter-word !important; /* Better word spacing for justification */
 }
