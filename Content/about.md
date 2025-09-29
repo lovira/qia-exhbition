@@ -1,41 +1,17 @@
-Beberapa tahun terakhir, karena terlanjur melakukan beragam praktik pengarsipan “queer”, 
-saya mulai banyak membaca tentang praktik-praktik pengarsipan queer dan kritik-kritik 
-yang menyertainya insert: thanks to teman-teman diskusi yang banyak memberi referensi maupun baca bersama. 
+Beberapa tahun terakhir, karena terlanjur melakukan beragam praktik pengarsipan “queer”, saya mulai banyak membaca tentang praktik-praktik pengarsipan queer dan kritik-kritik yang menyertainya [insert: thanks to teman-teman diskusi yang banyak memberi referensi maupun baca bersama]. 
 
-Queer Indonesia Archive (QIA) lahir dari arsip queer Indonesia yang belum terorganisasi 
-sebelumnya. Dengan semangat untuk menantang dan menentang penghapusan narasi LGBTQ+, 
-QIA banyak mengakomodasi praktik-praktik arsip berbasis bukti di dua tahun pertamanya (2020-2021), 
-berfokus pada kemungkinan-kemungkinan materi fisik yang bisa dikoleksi, diolah, dikategorisasi, 
-dibaca dan dipublikasi untuk memberi konteks tentang narasi dan kehidupan “queer” pasca kolonial, 
+Queer Indonesia Archive (QIA) lahir dari arsip queer Indonesia yang belum terorganisasi sebelumnya. Dengan semangat untuk menantang dan menentang penghapusan narasi queer, QIA banyak melakukan praktik-praktik arsip berbasis bukti di dua tahun pertamanya (2020-2021), berfokus pada kemungkinan-kemungkinan materi fisik yang bisa dikoleksi, diolah, dikategorisasi, dibaca dan dipublikasi untuk memberi konteks tentang narasi dan kehidupan “queer” pasca kolonial, khususnya pada masa sesudah Lambda Indonesia (organisasi gay Indonesia pertama) berdiri tahun 1982. 
 
-khususnya pada masa sesudah Lambda Indonesia (organisasi gay Indonesia pertama) berdiri tahun 1982. 
+Perhatian pada gerakan dan progres ini menjadi langkah awal QIA untuk menelusuri jejak yang paling mudah disusuri ulang untuk beberapa alasan: 1) jaringan gerakan yang masih terhubung, 2) gerakan-gerakan tersebut termaterialisasi dalam beragam bentuk arsip fisik (foto, tulisan, publikasi komunitas, dsb), 3) ingatan-ingatan yang masih bisa direkam (kami menyadari bahwa motif seperti ini bisa menjebak kami pada praktik-praktik pengarsipan yang eksploitatif) dari para aktivis yang bersedia kami wawancarai, dll. Pendekatan ini mempertemukan kami pada beragam materi dan narasi sejarah (atau bersejarah) yang seringkali tidak bisa atau sulit diakses oleh orang-orang di luar gerakan, khususnya oleh individu queer yang lahir dan besar di periode-periode vakumnya gerakan queer Indonesia pasca Orde Baru. 
+Sebagai kolektif yang terus bereksperimen dengan berbagai pendekatan pengarsipan, QIA telah melalui sejumlah proses untuk mengeksplorasi dan memperluas praktiknya. Inisiatif ini dimulai pada tahun 2020 dengan kunjungan pertama ke rumah Kak Florens dan Kak Moniq di Jakarta, dua sosok penting dalam IPOOS. Pada tahun 2021–2022, melalui program residensi yang diinisiasi Goethe-Institut bersama Riksa Afiaty dan Theodora Agni, QIA mengeksplorasi arsip komunitas di Yogyakarta. Proses ini mendapat dukungan dari program POP pada 2022–2023, yang memungkinkan QIA mengunjungi sejumlah kota lain seperti Makassar, Singaraja, Denpasar, Yogyakarta, Solo, Surabaya, dan Bandung.
+Memasuki tahun 2023, QIA melakukan riset tentang kisah hidup Ger van Braam, seorang tokoh sejarah queer, dengan mengundang queer perempuan Indonesia untuk membaca ulang dan menanggapi surat-surat pribadi Ger. Kemudian, di awal 2024, QIA bekerja sama dengan Queer Language Club (QLC) Jakarta merilis sebuah peta audio sejarah lisan. Melalui proyek ini, beberapa aktivis queer di Jakarta berbagi cerita dan memetakan ulang situs-situs kota yang mereka anggap penting dalam kehidupan dan perjuangan komunitas queer.
+Kegiatan-kegiatan ini membawa QIA pada satu pertanyaan baru: bagaimana mengorganisasi materi: memproses, mengkatalog, menginterpretasi dan menyajikannya kepada publik. Tumpukan materi mentah dalam cloud penyimpanan QIA membuat kami sadar betapa berlimpah-nya sejarah personal dan kolektif komunitas queer di Indonesia. Keberlimpahan ini termanifestasi dalam foto, album foto, surat-surat, publikasi komunitas, proposal acara, sejarah lisan dan cara-cara individu dan komunitas queer merawat kisah-kisah mereka.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Dalam memproses dan merespon keberlimpahan ini, QIA banyak melakukan percakapan tentang hal-hal praktis: bagaimana katalog bisa lebih inklusif, bagaimana kita bisa mengakomodasi penggunaan bahasa yang berubah dari tahun ke tahun, dan bagaimana kita menanggapi perubahan lanskap politik dalam menarasikan hal-hal yang traumatis dan penuh kekerasan, misalnya. Selain dengan bantuan anggota-anggota kolektif manajemen QIA yang baru dan para relawan, kami mulai mempertanyakan cara-cara apa yang bisa menjadi pilihan bagi QIA untuk mengkontekstualisasi materi-materi ini dan membuat panduan untuk mengakomodasi hal-hal praktis tersebut.
 
-<blockquote>
-<i>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-</i>
-</blockquote>
+Berbekal pengalaman menjadi peserta residensi dan pertanyaan-pertanyaan terkait etika dan politik arsip yang muncul dalam proses, kami memutuskan untuk mencari kolaborator dengan rangkaian lokakarya dan residensi; mengundang praktisi-praktisi yang bergerak di bidang keamanan digital, etika penelitian, penulisan historiografi dan respon arsip ke dalam karya seni, kami melakukan panggilan terbuka bagi praktisi seni/kreatif yang berminat (dan bisa meluangkan waktu) merespon materi-materi di QIA. Melalui serangkaian proses belajar, berdiskusi, melakukan penyesuaian, bingung bersama-sama sambil memetakan keterbatasan, karya-karya dalam pameran ini berhasil diselesaikan.
 
+Program residensi dan kolaborasi yang kami tuangkan dalam bentuk pameran digital dan zine ini didesain pertama kali untuk membantu QIA dan kolaborator dalam menavigasi dan mengkontekstualisasi ulang materi-materi yang sudah atau sedang diorganisasi dalam database QIA. Residensi ini adalah sebuah uji-coba untuk mengarahkan ulang kerja pengarsipan di QIA melalui kolaborasi dan interpretasi kreatif; mengevaluasi kembali titik berangkat “sejarah queer” dan bersama-sama mencari kemungkinan-kemungkinan sejarah yang konteks penyertanya yang jarang hadir dalam narasi yang berfokus pada gerakan–melalui materi-materi di QIA yang juga masih sangat terbatas.
+Peserta Residensi mengembangkan pembacaan kreatif dan reflektif atas keberlimpahan arsip komunitas queer, dengan pendekatan yang sangat personal dan kontekstual. Ruri dan Faqih, misalnya, menggunakan materi-materi publikasi komunitas untuk mengeksplorasi dinamika afeksi dan religi dalam komunitas. Ruri secara khusus membaca puisi-puisi yang dibuat oleh komunitas lesbian sebagai medium untuk memahami bagaimana perasaan cinta, relasi, dan kerentanan dimaknai oleh queer perempuan di Makassar. Melalui karya ini, ia mengkontekstualisasi puisi sebagai ruang pengungkapan emosi yang lokal dan intim. Sementara itu, Faqih mendalami bagaimana kontradiksi antara identitas, politik LGBTQIN+ dan nilai-nilai religius dibicarakan, baik sebagai sesuatu yang bertentangan maupun sebagai diskursus terbuka dalam komunitas. Ia menyoroti bagaimana ketegangan antara iman dan identitas justru dapat menjadi ruang afirmasi atau negosiasi yang penting dalam keseharian queer.
+Devi dan Catur merefleksikan arsip Puisi Wadam, pertunjukan di tahun 1980-an di Yogyakarta yang ditulis dan dipentaskan oleh transpuan. Mereka membaca ulang narasi-narasi dalam puisi tersebut dan mengaitkannya dengan kehidupan Catur sebagai seorang drag queen yang merantau ke Yogyakarta. Dengan pendekatan ini, mereka menunjukkan bahwa pengalaman migrasi, pencarian komunitas, dan ekspresi gender memiliki resonansi yang sangat personal. Melalui karya mereka, puisi dan pertunjukan menjadi titik temu antara arsip dan pengalaman hidup. Sementara itu, Hans mengkaji bagaimana maskulinitas dikonstruksi dalam relasi romantis lesbian pada era 1980–1990-an, khususnya melalui penggunaan istilah “suami-istri” dalam komunitas. Ia mempertanyakan bagaimana istilah ini bekerja dalam membentuk norma relasi dan membuka kemungkinan untuk menelusuri sejarah transman di Indonesia yang selama ini luput dari perhatian. Di sisi lain, Ajeng mengamati tren fashion melalui foto-foto tahun 70-90an, membaca bagaimana transpuan di masa lalu berdandan, membentuk estetika, dan mempraktikkan fashion sebagai bagian dari kehidupan berkomunitas. Ia tidak hanya melihat fashion sebagai ekspresi visual, tetapi juga sebagai bentuk resistensi dan kreativitas komunitas queer dalam menghadapi keterbatasan akses dan ruang.
 
-Queer Indonesia Archive (QIA) lahir dari arsip queer Indonesia yang belum terorganisasi 
-sebelumnya. Dengan semangat untuk menantang dan menentang penghapusan narasi LGBTQ+, 
-QIA banyak mengakomodasi praktik-praktik arsip berbasis bukti di dua tahun pertamanya (2020-2021), 
-berfokus pada kemungkinan-kemungkinan materi fisik yang bisa dikoleksi, diolah, dikategorisasi, 
-dibaca dan dipublikasi untuk memberi konteks tentang narasi dan kehidupan “queer” pasca kolonial, 
-
-khususnya pada masa sesudah Lambda Indonesia (organisasi gay Indonesia pertama) berdiri tahun 1982. 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
