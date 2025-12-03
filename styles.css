@@ -884,8 +884,26 @@ opacity: 0.7; /* 70% visible */
         max-width: 90px;
     }
 }
+/* By default, hide return button (will be shown by media queries) */
 .return-button {
     display: none;
+}
+
+/* Desktop: show return button in sidebar */
+@media (min-width: 1025px) {
+    .return-button {
+        display: block;
+    }
+
+    .return-button a {
+        color: #e8e8e8e0 !important;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .return-button a:hover {
+        color: #AB6E7E !important;
+    }
 }
 
 /* Show the return button only on mobile/tablet (when sidebar is horizontal) */

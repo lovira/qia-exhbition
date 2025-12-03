@@ -17,6 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
             markdownFile = 'Content/essay1.md';
             break;
         case 'about.html':
+        case 'About.html':
+        case 'about2.html':
             markdownFile = 'Content/about.md';
             break;
         default:
@@ -39,6 +41,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Remove the title from markdown since it's already in the HTML
                     const markdownWithoutTitle = markdown.replace(/^# .*\n/, '');
                     essayBody.innerHTML = marked.parse(markdownWithoutTitle);
+                } else {
+                    console.log('No essay-body found');
+                }
+            } else if (currentPage === 'about2.html' || currentPage === 'About.html') {
+                // For about2 and About, load into essay-body div
+                const essayBody = contentContainer.querySelector('.essay-body');
+                if (essayBody) {
+                    essayBody.innerHTML = marked.parse(markdown);
                 } else {
                     console.log('No essay-body found');
                 }
