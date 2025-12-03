@@ -1,0 +1,13 @@
+re/directing abundance is the final presentation of Terhubung Lewat Hal-Hal yang Tinggal, a series of workshops and residencies initiated by Queer Indonesia Archive (QIA) to connect art and literary practitioners with QIA’s archival collection. The program began in 2024 with an open call and a series of workshops. Focusing on archival approaches, ethics, history, and creative processes, these workshops brought together residency participants, QIA volunteers, and facilitators to discuss various possibilities for re-examining QIA’s archival practices and exploring new ways of engaging with its materials.
+The selected resident artists come from diverse creative backgrounds. Through reflective and curatorial processes, they worked with the QIA team to identify archival materials they wished to revisit. These materials were recontextualized by considering the artists’ positionalities, the textures and dynamics of queer life across generations in Indonesia, the limitations within QIA’s practices and archival resources–and the history itself, and the reflections that emerged throughout the residency.
+This digital exhibition presents the outcomes of each artist’s process, framed through their own aesthetic practices. It brings together multiple perspectives—social justice, activism, queer cultures in Indonesia, and critical engagements with these themes—while tracing their interactions with specific events, figures, forms of knowledge, and affective resonances reflected in the chosen materials.
+Rather than establishing a fixed narrative of Indonesia’s queer history, Terhubung Lewat Hal-Hal yang Tinggal serves as an experimental space to question “queer” as an approach itself within its nature of abundance. By involving personal experiences, acknowledging discomfort in the rereading process, and recognizing affect as part of queer knowledge production, the works invite us to reconsider what “queer history” means and how we might connect to it through artistic and literary practices. It connects and reengages history with our present-day challenges and experiences, while envisioning the possible future as part of this ongoing dialogue. The project is intended to invite us to see the archive as both a site of return and a point of departure—where history, art, and imagination continuously intersect.
+
+
+Artists: Devintri Hans Aulian Nurul Fajri Qih Veronica Ajeng
+
+Web Designer: Lovira
+
+Workshop Facilitator: Amirah Fadhlina Daeng Ipul Nik Setiadarma Tintin Wulia
+
+Tim QIA: Sidhi Vhisatya Ristyawan Pratama Dayintha Pinastika Aria Gita Harits P.

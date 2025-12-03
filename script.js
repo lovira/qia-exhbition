@@ -18,9 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
             break;
         case 'about.html':
         case 'About.html':
-        case 'about2.html':
-            markdownFile = 'Content/about.md';
+            markdownFile = 'Content/about-id.md';
             break;
+        case 'about2.html':
+            // Language toggle handles loading for about2.html
+            console.log('Language toggle will handle content loading');
+            return;
         default:
             console.log('No markdown file configured for this page');
             return; // Exit if no matching page

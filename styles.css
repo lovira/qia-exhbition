@@ -1110,3 +1110,35 @@ opacity: 0.7; /* 70% visible */
         width: 80%;
     }
 }
+
+/* Language Toggle Button */
+.language-toggle {
+    background-color: #AB6E7E;
+    color: #f3d8b7bf;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.language-toggle:hover {
+    background-color: #8d5966;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.language-toggle:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .language-toggle {
+        font-size: 12px;
+        padding: 8px 16px;
+    }
+}
